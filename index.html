@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー — Tarot Draw</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0D0A1A;
+      --surface:  #1A0F3A;
+      --gold:     #C9A84C;
+      --purple:   #7B2FBE;
+      --text:     #F5F0E8;
+      --text-sub: #B8B0D0;
+      --border:   rgba(201,168,76,0.20);
+      --radius:   12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* ---- 背景装飾（固定星フィールド風） ---- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(123,47,190,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(123,47,190,0.10) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- レイアウト ---- */
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* ---- ヘッダー ---- */
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .app-name {
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0.85;
+    }
+
+    header h1 {
+      font-size: clamp(24px, 5vw, 34px);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .ornament-line {
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+      opacity: 0.5;
+    }
+    .ornament-line.right {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+    .ornament-diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.8;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    /* ---- 目次 ---- */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .toc-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+    }
+
+    .toc li {
+      counter-increment: toc-counter;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .toc li:last-child { border-bottom: none; }
+
+    .toc a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .toc a::before {
+      content: counter(toc-counter) ". ";
+      color: var(--gold);
+      opacity: 0.7;
+      margin-right: 6px;
+    }
+    .toc a:hover { color: var(--gold); }
+
+    /* ---- セクション ---- */
+    section {
+      margin-bottom: 44px;
+    }
+
+    section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h2 .section-num {
+      font-size: 12px;
+      color: var(--gold);
+      opacity: 0.6;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ---- 強調ボックス ---- */
+    .highlight-box {
+      background: rgba(123,47,190,0.12);
+      border: 1px solid rgba(123,47,190,0.35);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .highlight-box.gold {
+      background: rgba(201,168,76,0.08);
+      border-color: rgba(201,168,76,0.30);
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .highlight-box .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      opacity: 0.85;
+    }
+
+    /* ---- リスト ---- */
+    ul, ol {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    ul li, ol li {
+      color: var(--text-sub);
+      padding: 5px 0 5px 22px;
+      position: relative;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    ul li:last-child, ol li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 9px;
+      top: 8px;
+      opacity: 0.7;
+    }
+
+    ol { counter-reset: ol-counter; }
+    ol li { counter-increment: ol-counter; }
+    ol li::before {
+      content: counter(ol-counter) '.';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    /* ---- テーブル ---- */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead th {
+      background: var(--surface);
+      color: var(--gold);
+      font-weight: 600;
+      padding: 12px 16px;
+      text-align: left;
+      letter-spacing: 0.5px;
+      font-size: 13px;
+    }
+
+    tbody td {
+      padding: 11px 16px;
+      color: var(--text-sub);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+
+    tbody tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* ---- フッター ---- */
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-sub);
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
+
+    footer .footer-app {
+      color: var(--gold);
+      opacity: 0.9;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    /* ---- レスポンシブ ---- */
+    @media (max-width: 480px) {
+      .wrapper { padding: 36px 16px 60px; }
+      section h2 { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- ヘッダー -->
+    <header>
+      <p class="app-name">Tarot Draw</p>
+      <h1>プライバシーポリシー</h1>
+      <div class="ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+        <span class="ornament-diamond"></span>
+        <span class="ornament-line right"></span>
+      </div>
+      <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年3月21日</p>
+    </header>
+
+    <!-- 目次 -->
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">Contents</p>
+      <ol>
+        <li><a href="#s1">はじめに</a></li>
+        <li><a href="#s2">収集する情報</a></li>
+        <li><a href="#s3">情報の利用目的</a></li>
+        <li><a href="#s4">第三者への提供</a></li>
+        <li><a href="#s5">外部サービスとの連携</a></li>
+        <li><a href="#s6">通知機能について</a></li>
+        <li><a href="#s7">データの保存場所</a></li>
+        <li><a href="#s8">お子様のプライバシー</a></li>
+        <li><a href="#s9">本ポリシーの変更</a></li>
+        <li><a href="#s10">免責事項</a></li>
+        <li><a href="#s11">お問い合わせ</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. はじめに -->
+    <section id="s1">
+      <h2><span class="section-num">01</span>はじめに</h2>
+      <p>
+        Tarot Draw（以下「本アプリ」）をご利用いただきありがとうございます。
+        本プライバシーポリシーは、本アプリの開発者（以下「開発者」）が
+        利用者（以下「お客様」）の情報をどのように取り扱うかを説明するものです。
+      </p>
+      <div class="highlight-box gold">
+        <p class="label">要点</p>
+        <p>
+          本アプリは、氏名・メールアドレス・位置情報などの個人情報を一切収集しません。
+          アカウント登録も不要です。
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 収集する情報 -->
+    <section id="s2">
+      <h2><span class="section-num">02</span>収集する情報</h2>
+      <p>本アプリが収集・保存する情報は以下の通りです。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>情報の種類</th>
+              <th>収集の有無</th>
+              <th>保存場所</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>氏名・メールアドレス等の個人情報</td>
+              <td>収集しない</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>位置情報</td>
+              <td>収集しない</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>カメラ・マイク</td>
+              <td>使用しない</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>連絡先・通話履歴</td>
+              <td>収集しない</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>初回起動済みフラグ</td>
+              <td>保存する</td>
+              <td>端末内（SharedPreferences）</td>
+            </tr>
+            <tr>
+              <td>広告の最終表示時刻</td>
+              <td>保存する</td>
+              <td>端末内（SharedPreferences）</td>
+            </tr>
+            <tr>
+              <td>タロット占い結果の画像キャッシュ</td>
+              <td>一時保存する</td>
+              <td>端末内（キャッシュ領域／最大3件）</td>
+            </tr>
+            <tr>
+              <td>クラッシュログ・使用統計情報（Firebase Crashlytics / Analytics）</td>
+              <td>自動収集する</td>
+              <td>Google のサーバー（広告IDを含む場合があります）</td>
+            </tr>
+            <tr>
+              <td>広告識別子（AdMob による広告配信）</td>
+              <td>自動収集する</td>
+              <td>Google のサーバー</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        氏名・メールアドレス・位置情報等の個人を特定できる情報は一切収集しません。
+        上記のクラッシュログ・使用統計・広告IDはFirebase・AdMob等のSDKにより自動的にGoogleのサーバーへ送信されます。
+      </p>
+    </section>
+
+    <!-- 3. 情報の利用目的 -->
+    <section id="s3">
+      <h2><span class="section-num">03</span>情報の利用目的</h2>
+      <p>本アプリが保存する情報の利用目的は以下に限られます。</p>
+      <ul>
+        <li>初回起動時のウェルカムダイアログを一度だけ表示するための状態管理</li>
+        <li>広告の表示頻度を適切に管理するための記録</li>
+        <li>SNS シェア用のタロット結果画像を端末内に一時保存し、共有機能を提供する</li>
+        <li>Firebase Crashlytics によるクラッシュ解析・アプリ品質改善</li>
+        <li>Firebase Analytics による使用状況の把握（マーケティング目的での個人への利用はしません）</li>
+        <li>Google AdMob による広告配信</li>
+      </ul>
+    </section>
+
+    <!-- 4. 第三者への提供 -->
+    <section id="s4">
+      <h2><span class="section-num">04</span>第三者への提供</h2>
+      <div class="highlight-box">
+        <p class="label">重要</p>
+        <p>
+          本アプリは、お客様の情報を第三者（企業・個人・政府機関を含む）に
+          販売することは一切ありません。
+        </p>
+      </div>
+      <p>
+        ただし、本アプリは Firebase Crashlytics・Firebase Analytics・Google AdMob・Firebase Remote Config を使用しており、
+        これらのSDKはサービス提供に必要な情報（クラッシュログ・使用統計・広告IDなど）を
+        Google等の提供元のサーバーに送信します。
+        送信された情報はGoogle等のプライバシーポリシーに従って処理されます。
+      </p>
+      <p>
+        <a href="https://policies.google.com/privacy" style="color:var(--gold);opacity:0.85;">Googleプライバシーポリシー</a>
+      </p>
+    </section>
+
+    <!-- 5. 外部サービスとの連携 -->
+    <section id="s5">
+      <h2><span class="section-num">05</span>外部サービスとの連携</h2>
+      <p>
+        本アプリは、お客様が「Gemini に問う」ボタンをタップした場合に限り、
+        Android の Share Intent（共有機能）を使用して外部アプリへテキストデータを渡します。
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>連携サービス</th>
+              <th>データの種類</th>
+              <th>タイミング</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gemini（Google）/ ChatGPT / Claude 等のAIアプリ</td>
+              <td>占い結果テキスト（スプレッド名・カード名・正逆位置・相談内容）</td>
+              <td>お客様がボタンをタップしたときのみ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        この共有はお客様の明示的な操作によってのみ実行されます。
+        自動的に外部サービスへデータを送信することはありません。
+      </p>
+      <p>
+        共有先の外部アプリ（Gemini 等）での情報の取り扱いについては、
+        各サービスのプライバシーポリシーをご参照ください。
+        本アプリは外部アプリでの情報の利用について責任を負いません。
+      </p>
+    </section>
+
+    <!-- 6. 通知機能について -->
+    <section id="s6">
+      <h2><span class="section-num">06</span>通知機能について</h2>
+      <p>
+        本アプリは、お客様が許可された場合に「デイリーカード通知」を毎朝お届けします。
+      </p>
+      <ul>
+        <li>通知のために個人情報を収集・送信することはありません</li>
+        <li>通知の内容はランダムに選ばれた1枚のタロットカードとその意味です</li>
+        <li>通知の配信処理はお客様の端末内でのみ完結します（外部サーバーを使用しません）</li>
+        <li>通知はいつでも端末の設定画面から停止できます</li>
+      </ul>
+      <p>
+        Android 13（API 33）以上の端末では、通知の送信にお客様の許可が必要です。
+        許可しなかった場合でも、本アプリの占い機能はすべてご利用いただけます。
+      </p>
+    </section>
+
+    <!-- 7. データの保存場所 -->
+    <section id="s7">
+      <h2><span class="section-num">07</span>データの保存場所</h2>
+      <p>
+        本アプリが保存するすべてのデータはお客様の端末内にのみ存在します。
+        クラウドサービスや開発者のサーバーへのデータ転送は行いません。
+      </p>
+      <ul>
+        <li>
+          <strong style="color:var(--text)">SharedPreferences（端末内）</strong>：
+          初回起動フラグ・広告の最終表示時刻を端末のアプリ専用領域に保存します。
+          アプリをアンインストールすると削除されます。
+        </li>
+        <li>
+          <strong style="color:var(--text)">キャッシュ領域（端末内）</strong>：
+          SNS シェア用の画像を最大3件まで一時保存します。
+          端末のキャッシュ削除またはアンインストールにより削除されます。
+        </li>
+        <li>
+          <strong style="color:var(--text)">Google のサーバー</strong>：
+          Firebase Crashlytics・Analytics がクラッシュログ・使用統計情報を、
+          AdMob が広告識別子を自動的にGoogleのサーバーに送信します。
+          保持期間はGoogleのポリシーに従います。
+        </li>
+      </ul>
+    </section>
+
+    <!-- 8. お子様のプライバシー -->
+    <section id="s8">
+      <h2><span class="section-num">08</span>お子様のプライバシー</h2>
+      <p>
+        本アプリは13歳未満のお子様を対象としていません。
+        本アプリは個人情報を一切収集しないため、
+        意図せずお子様の個人情報が収集される可能性はありません。
+      </p>
+      <p>
+        保護者の方で、お子様が本アプリを利用していることに懸念がある場合は、
+        下記のお問い合わせ先までご連絡ください。
+      </p>
+    </section>
+
+    <!-- 9. 本ポリシーの変更 -->
+    <section id="s9">
+      <h2><span class="section-num">09</span>本ポリシーの変更</h2>
+      <p>
+        開発者は、法令の改正・アプリの機能追加・その他必要に応じて
+        本プライバシーポリシーを変更することがあります。
+      </p>
+      <ul>
+        <li>変更後のポリシーは本ページに掲載した時点で効力を生じます</li>
+        <li>重要な変更がある場合は、アプリ内またはストアの更新情報でお知らせします</li>
+        <li>変更日は本ページ冒頭の「最終更新日」に反映されます</li>
+      </ul>
+      <p>
+        本アプリを継続してご利用いただくことで、変更後のポリシーに同意したものとみなします。
+      </p>
+    </section>
+
+    <!-- 10. 免責事項 -->
+    <section id="s10">
+      <h2><span class="section-num">10</span>免責事項</h2>
+      <div class="highlight-box">
+        <p class="label">重要</p>
+        <p>
+          本アプリのタロット占い結果は、エンターテインメントおよび自己洞察を目的としたものです。
+          占い結果を医療・法律・財務・人生の重要な判断の根拠とすることはお控えください。
+          占い結果の解釈はお客様ご自身の責任において行ってください。
+        </p>
+      </div>
+      <p>
+        本アプリおよび本ポリシーは、予告なく変更・停止・終了することがあります。
+        これによってお客様に生じた損害について、開発者は責任を負いません。
+      </p>
+    </section>
+
+    <!-- 11. お問い合わせ -->
+    <section id="s11">
+      <h2><span class="section-num">11</span>お問い合わせ</h2>
+      <p>
+        本プライバシーポリシーに関するご質問・ご意見は、
+        Google Play ストアのアプリページよりお問い合わせください。
+      </p>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+      <p class="footer-app">Tarot Draw</p>
+      <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+      <p>本ポリシーは日本語を正文とします。</p>
+    </footer>
+
+  </div>
+</body>
+</html>
