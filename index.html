@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライバシーポリシー — Tarot Draw</title>
+  <title>Privacy Policy — Tarot Draw</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -29,7 +29,6 @@
       min-height: 100vh;
     }
 
-    /* ---- 背景装飾（固定星フィールド風） ---- */
     body::before {
       content: '';
       position: fixed;
@@ -41,7 +40,6 @@
       z-index: 0;
     }
 
-    /* ---- レイアウト ---- */
     .wrapper {
       position: relative;
       z-index: 1;
@@ -50,11 +48,34 @@
       padding: 60px 24px 80px;
     }
 
-    /* ---- ヘッダー ---- */
-    header {
-      text-align: center;
-      margin-bottom: 56px;
+    /* ---- 言語セレクター ---- */
+    .lang-selector {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
+
+    .lang-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-sub);
+      cursor: pointer;
+      font-size: 13px;
+      padding: 6px 16px;
+      transition: all 0.2s;
+    }
+
+    .lang-btn:hover, .lang-btn.active {
+      background: rgba(201,168,76,0.15);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ---- ヘッダー ---- */
+    header { text-align: center; margin-bottom: 56px; }
 
     .app-name {
       font-size: 13px;
@@ -80,28 +101,11 @@
       gap: 12px;
       margin-bottom: 20px;
     }
-    .ornament-line {
-      flex: 1;
-      max-width: 120px;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold));
-      opacity: 0.5;
-    }
-    .ornament-line.right {
-      background: linear-gradient(to left, transparent, var(--gold));
-    }
-    .ornament-diamond {
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      opacity: 0.8;
-    }
+    .ornament-line { flex: 1; max-width: 120px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); opacity: 0.5; }
+    .ornament-line.right { background: linear-gradient(to left, transparent, var(--gold)); }
+    .ornament-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); opacity: 0.8; }
 
-    .meta {
-      font-size: 13px;
-      color: var(--text-sub);
-    }
+    .meta { font-size: 13px; color: var(--text-sub); }
 
     /* ---- 目次 ---- */
     .toc {
@@ -111,507 +115,666 @@
       padding: 24px 28px;
       margin-bottom: 48px;
     }
-
-    .toc-title {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      opacity: 0.85;
-    }
-
-    .toc ol {
-      list-style: none;
-      counter-reset: toc-counter;
-    }
-
-    .toc li {
-      counter-increment: toc-counter;
-      padding: 4px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
+    .toc-title { font-size: 12px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; opacity: 0.85; }
+    .toc ol { list-style: none; counter-reset: toc-counter; }
+    .toc li { counter-increment: toc-counter; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .toc li:last-child { border-bottom: none; }
-
-    .toc a {
-      color: var(--text-sub);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-    .toc a::before {
-      content: counter(toc-counter) ". ";
-      color: var(--gold);
-      opacity: 0.7;
-      margin-right: 6px;
-    }
+    .toc a { color: var(--text-sub); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .toc a::before { content: counter(toc-counter) ". "; color: var(--gold); opacity: 0.7; margin-right: 6px; }
     .toc a:hover { color: var(--gold); }
 
     /* ---- セクション ---- */
-    section {
-      margin-bottom: 44px;
-    }
-
-    section h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--gold);
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    section h2 .section-num {
-      font-size: 12px;
-      color: var(--gold);
-      opacity: 0.6;
-      letter-spacing: 1px;
-    }
-
-    p {
-      color: var(--text-sub);
-      margin-bottom: 12px;
-    }
-
+    section { margin-bottom: 44px; }
+    section h2 { font-size: 18px; font-weight: 700; color: var(--gold); padding-bottom: 10px; border-bottom: 1px solid var(--border); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    section h2 .section-num { font-size: 12px; color: var(--gold); opacity: 0.6; letter-spacing: 1px; }
+    p { color: var(--text-sub); margin-bottom: 12px; }
     p:last-child { margin-bottom: 0; }
 
-    /* ---- 強調ボックス ---- */
-    .highlight-box {
-      background: rgba(123,47,190,0.12);
-      border: 1px solid rgba(123,47,190,0.35);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin: 16px 0;
-    }
+    .highlight-box { background: rgba(123,47,190,0.12); border: 1px solid rgba(123,47,190,0.35); border-radius: var(--radius); padding: 20px 24px; margin: 16px 0; }
+    .highlight-box.gold { background: rgba(201,168,76,0.08); border-color: rgba(201,168,76,0.30); }
+    .highlight-box p { margin-bottom: 0; color: var(--text); font-size: 14px; }
+    .highlight-box .label { font-size: 11px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; opacity: 0.85; }
 
-    .highlight-box.gold {
-      background: rgba(201,168,76,0.08);
-      border-color: rgba(201,168,76,0.30);
-    }
-
-    .highlight-box p {
-      margin-bottom: 0;
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    .highlight-box .label {
+    .platform-badge {
+      display: inline-block;
       font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      opacity: 0.85;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
     }
+    .badge-app { background: rgba(123,47,190,0.3); color: #c4a0ff; }
+    .badge-web { background: rgba(201,168,76,0.2); color: var(--gold); }
 
-    /* ---- リスト ---- */
-    ul, ol {
-      padding-left: 0;
-      list-style: none;
-      margin-bottom: 12px;
-    }
-
-    ul li, ol li {
-      color: var(--text-sub);
-      padding: 5px 0 5px 22px;
-      position: relative;
-      font-size: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
+    ul, ol { padding-left: 0; list-style: none; margin-bottom: 12px; }
+    ul li, ol li { color: var(--text-sub); padding: 5px 0 5px 22px; position: relative; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.04); }
     ul li:last-child, ol li:last-child { border-bottom: none; }
-
-    ul li::before {
-      content: '✦';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-size: 9px;
-      top: 8px;
-      opacity: 0.7;
-    }
-
+    ul li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 9px; top: 8px; opacity: 0.7; }
     ol { counter-reset: ol-counter; }
     ol li { counter-increment: ol-counter; }
-    ol li::before {
-      content: counter(ol-counter) '.';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-size: 13px;
-      opacity: 0.7;
-    }
+    ol li::before { content: counter(ol-counter) '.'; position: absolute; left: 0; color: var(--gold); font-size: 13px; opacity: 0.7; }
 
-    /* ---- テーブル ---- */
-    .table-wrap {
-      overflow-x: auto;
-      margin: 16px 0;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
+    .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: var(--radius); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead th { background: var(--surface); color: var(--gold); font-weight: 600; padding: 12px 16px; text-align: left; letter-spacing: 0.5px; font-size: 13px; }
+    tbody td { padding: 11px 16px; color: var(--text-sub); border-top: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    tbody tr:hover td { background: rgba(255,255,255,0.02); }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
+    footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--border); margin-top: 60px; }
+    footer p { font-size: 13px; color: var(--text-sub); opacity: 0.7; margin-bottom: 6px; }
+    footer .footer-app { color: var(--gold); opacity: 0.9; font-size: 14px; letter-spacing: 2px; }
 
-    thead th {
-      background: var(--surface);
-      color: var(--gold);
-      font-weight: 600;
-      padding: 12px 16px;
-      text-align: left;
-      letter-spacing: 0.5px;
-      font-size: 13px;
-    }
+    a { color: var(--gold); opacity: 0.85; }
 
-    tbody td {
-      padding: 11px 16px;
-      color: var(--text-sub);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      vertical-align: top;
-    }
-
-    tbody tr:hover td {
-      background: rgba(255,255,255,0.02);
-    }
-
-    /* ---- フッター ---- */
-    footer {
-      text-align: center;
-      padding-top: 40px;
-      border-top: 1px solid var(--border);
-      margin-top: 60px;
-    }
-
-    footer p {
-      font-size: 13px;
-      color: var(--text-sub);
-      opacity: 0.7;
-      margin-bottom: 6px;
-    }
-
-    footer .footer-app {
-      color: var(--gold);
-      opacity: 0.9;
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-
-    /* ---- レスポンシブ ---- */
     @media (max-width: 480px) {
       .wrapper { padding: 36px 16px 60px; }
       section h2 { font-size: 16px; }
     }
+
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
   </style>
 </head>
 <body>
   <div class="wrapper">
 
-    <!-- ヘッダー -->
-    <header>
-      <p class="app-name">Tarot Draw</p>
-      <h1>プライバシーポリシー</h1>
-      <div class="ornament">
-        <span class="ornament-line"></span>
-        <span class="ornament-diamond"></span>
-        <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
-        <span class="ornament-diamond"></span>
-        <span class="ornament-line right"></span>
-      </div>
-      <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年3月21日</p>
-    </header>
+    <div class="lang-selector">
+      <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
+      <button class="lang-btn" onclick="setLang('zh-CN')">简体中文</button>
+      <button class="lang-btn" onclick="setLang('zh-TW')">繁體中文</button>
+      <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+    </div>
 
-    <!-- 目次 -->
-    <nav class="toc" aria-label="目次">
-      <p class="toc-title">Contents</p>
-      <ol>
-        <li><a href="#s1">はじめに</a></li>
-        <li><a href="#s2">収集する情報</a></li>
-        <li><a href="#s3">情報の利用目的</a></li>
-        <li><a href="#s4">第三者への提供</a></li>
-        <li><a href="#s5">外部サービスとの連携</a></li>
-        <li><a href="#s6">通知機能について</a></li>
-        <li><a href="#s7">データの保存場所</a></li>
-        <li><a href="#s8">お子様のプライバシー</a></li>
-        <li><a href="#s9">本ポリシーの変更</a></li>
-        <li><a href="#s10">免責事項</a></li>
-        <li><a href="#s11">お問い合わせ</a></li>
-      </ol>
-    </nav>
+    <!-- ========== 日本語 ========== -->
+    <div data-lang="ja">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>プライバシーポリシー</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年4月26日</p>
+      </header>
 
-    <!-- 1. はじめに -->
-    <section id="s1">
-      <h2><span class="section-num">01</span>はじめに</h2>
-      <p>
-        Tarot Draw（以下「本アプリ」）をご利用いただきありがとうございます。
-        本プライバシーポリシーは、本アプリの開発者（以下「開発者」）が
-        利用者（以下「お客様」）の情報をどのように取り扱うかを説明するものです。
-      </p>
-      <div class="highlight-box gold">
-        <p class="label">要点</p>
-        <p>
-          本アプリは、氏名・メールアドレス・位置情報などの個人情報を一切収集しません。
-          アカウント登録も不要です。
-        </p>
-      </div>
-    </section>
+      <nav class="toc" aria-label="目次">
+        <p class="toc-title">Contents</p>
+        <ol>
+          <li><a href="#ja-s1">はじめに</a></li>
+          <li><a href="#ja-s2">収集する情報</a></li>
+          <li><a href="#ja-s3">情報の利用目的</a></li>
+          <li><a href="#ja-s4">第三者への提供</a></li>
+          <li><a href="#ja-s5">外部サービスとの連携</a></li>
+          <li><a href="#ja-s6">広告・アフィリエイトについて</a></li>
+          <li><a href="#ja-s7">通知機能について</a></li>
+          <li><a href="#ja-s8">データの保存場所</a></li>
+          <li><a href="#ja-s9">お子様のプライバシー</a></li>
+          <li><a href="#ja-s10">本ポリシーの変更</a></li>
+          <li><a href="#ja-s11">免責事項</a></li>
+          <li><a href="#ja-s12">お問い合わせ</a></li>
+        </ol>
+      </nav>
 
-    <!-- 2. 収集する情報 -->
-    <section id="s2">
-      <h2><span class="section-num">02</span>収集する情報</h2>
-      <p>本アプリが収集・保存する情報は以下の通りです。</p>
+      <section id="ja-s1">
+        <h2><span class="section-num">01</span>はじめに</h2>
+        <p>Tarot Draw（以下「本アプリ」）をご利用いただきありがとうございます。本プライバシーポリシーは、iOS・Android アプリ版および Web アプリ版（tarot-draw.naru2.com）のすべてに適用されます。</p>
+        <div class="highlight-box gold">
+          <p class="label">要点</p>
+          <p>本アプリは、氏名・メールアドレス・位置情報などの個人情報を一切収集しません。アカウント登録も不要です。</p>
+        </div>
+      </section>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>情報の種類</th>
-              <th>収集の有無</th>
-              <th>保存場所</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>氏名・メールアドレス等の個人情報</td>
-              <td>収集しない</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>位置情報</td>
-              <td>収集しない</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>カメラ・マイク</td>
-              <td>使用しない</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>連絡先・通話履歴</td>
-              <td>収集しない</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>初回起動済みフラグ</td>
-              <td>保存する</td>
-              <td>端末内（SharedPreferences）</td>
-            </tr>
-            <tr>
-              <td>広告の最終表示時刻</td>
-              <td>保存する</td>
-              <td>端末内（SharedPreferences）</td>
-            </tr>
-            <tr>
-              <td>タロット占い結果の画像キャッシュ</td>
-              <td>一時保存する</td>
-              <td>端末内（キャッシュ領域／最大3件）</td>
-            </tr>
-            <tr>
-              <td>クラッシュログ・使用統計情報（Firebase Crashlytics / Analytics）</td>
-              <td>自動収集する</td>
-              <td>Google のサーバー（広告IDを含む場合があります）</td>
-            </tr>
-            <tr>
-              <td>広告識別子（AdMob による広告配信）</td>
-              <td>自動収集する</td>
-              <td>Google のサーバー</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <section id="ja-s2">
+        <h2><span class="section-num">02</span>収集する情報</h2>
+        <p>本アプリが収集・保存する情報は以下の通りです。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>情報の種類</th><th>収集の有無</th><th>保存場所</th><th>対象</th></tr></thead>
+            <tbody>
+              <tr><td>氏名・メールアドレス等の個人情報</td><td>収集しない</td><td>—</td><td>全版</td></tr>
+              <tr><td>位置情報・カメラ・マイク</td><td>使用しない</td><td>—</td><td>全版</td></tr>
+              <tr><td>占い履歴（カード・日時・テーマ）</td><td>保存する</td><td>端末内 IndexedDB <span class="platform-badge badge-web">Web版</span> / 端末内ストレージ <span class="platform-badge badge-app">アプリ版</span></td><td>全版</td></tr>
+              <tr><td>広告の最終表示時刻・初回起動フラグ</td><td>保存する</td><td>端末内（SharedPreferences）</td><td><span class="platform-badge badge-app">アプリ版</span></td></tr>
+              <tr><td>Cookie・トラッキングピクセル（広告計測）</td><td>使用する</td><td>ブラウザ内</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
+              <tr><td>クラッシュログ・使用統計（Firebase）</td><td>自動収集する</td><td>Google のサーバー</td><td><span class="platform-badge badge-app">アプリ版</span></td></tr>
+              <tr><td>広告識別子（AdMob）</td><td>自動収集する</td><td>Google のサーバー</td><td><span class="platform-badge badge-app">アプリ版</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Web版ではサービスワーカーによるオフラインキャッシュを使用します。iOS Safari では ITP により、7日間アクセスがない場合に IndexedDB のデータが削除される場合があります。</p>
+      </section>
 
-      <p>
-        氏名・メールアドレス・位置情報等の個人を特定できる情報は一切収集しません。
-        上記のクラッシュログ・使用統計・広告IDはFirebase・AdMob等のSDKにより自動的にGoogleのサーバーへ送信されます。
-      </p>
-    </section>
+      <section id="ja-s3">
+        <h2><span class="section-num">03</span>情報の利用目的</h2>
+        <ul>
+          <li>占い履歴の保存・表示・まとめ送信機能の提供</li>
+          <li>広告の表示頻度を適切に管理するための記録</li>
+          <li>A8.net アフィリエイト広告のクリック計測</li>
+          <li>Firebase Crashlytics によるクラッシュ解析・アプリ品質改善（アプリ版）</li>
+          <li>Google AdMob による広告配信（アプリ版）</li>
+        </ul>
+      </section>
 
-    <!-- 3. 情報の利用目的 -->
-    <section id="s3">
-      <h2><span class="section-num">03</span>情報の利用目的</h2>
-      <p>本アプリが保存する情報の利用目的は以下に限られます。</p>
-      <ul>
-        <li>初回起動時のウェルカムダイアログを一度だけ表示するための状態管理</li>
-        <li>広告の表示頻度を適切に管理するための記録</li>
-        <li>SNS シェア用のタロット結果画像を端末内に一時保存し、共有機能を提供する</li>
-        <li>Firebase Crashlytics によるクラッシュ解析・アプリ品質改善</li>
-        <li>Firebase Analytics による使用状況の把握（マーケティング目的での個人への利用はしません）</li>
-        <li>Google AdMob による広告配信</li>
-      </ul>
-    </section>
+      <section id="ja-s4">
+        <h2><span class="section-num">04</span>第三者への提供</h2>
+        <div class="highlight-box">
+          <p class="label">重要</p>
+          <p>本アプリは、お客様の情報を第三者に販売することは一切ありません。</p>
+        </div>
+        <p>本アプリは以下の外部サービスを使用しており、サービス提供に必要な情報を各サービスのサーバーに送信します。送信された情報は各サービスのプライバシーポリシーに従って処理されます。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>サービス</th><th>目的</th><th>対象</th></tr></thead>
+            <tbody>
+              <tr><td>Google（Firebase / AdMob）</td><td>クラッシュ解析・広告配信</td><td><span class="platform-badge badge-app">アプリ版</span></td></tr>
+              <tr><td>A8.net（アフィリエイト）</td><td>広告クリック計測</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
+              <tr><td>Cloudflare</td><td>CDN・アクセス解析</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><a href="https://policies.google.com/privacy">Google プライバシーポリシー</a>　／　<a href="https://www.a8.net/privacy.html">A8.net プライバシーポリシー</a></p>
+      </section>
 
-    <!-- 4. 第三者への提供 -->
-    <section id="s4">
-      <h2><span class="section-num">04</span>第三者への提供</h2>
-      <div class="highlight-box">
-        <p class="label">重要</p>
-        <p>
-          本アプリは、お客様の情報を第三者（企業・個人・政府機関を含む）に
-          販売することは一切ありません。
-        </p>
-      </div>
-      <p>
-        ただし、本アプリは Firebase Crashlytics・Firebase Analytics・Google AdMob・Firebase Remote Config を使用しており、
-        これらのSDKはサービス提供に必要な情報（クラッシュログ・使用統計・広告IDなど）を
-        Google等の提供元のサーバーに送信します。
-        送信された情報はGoogle等のプライバシーポリシーに従って処理されます。
-      </p>
-      <p>
-        <a href="https://policies.google.com/privacy" style="color:var(--gold);opacity:0.85;">Googleプライバシーポリシー</a>
-      </p>
-    </section>
+      <section id="ja-s5">
+        <h2><span class="section-num">05</span>外部サービスとの連携</h2>
+        <p>「AIに聞く」ボタンを使用した場合に限り、引いたカードの情報と入力した相談内容を外部 AI アプリ（ChatGPT・Gemini・Claude 等）に渡します。</p>
+        <ul>
+          <li>この共有はお客様の明示的な操作によってのみ実行されます</li>
+          <li>本アプリのサーバーを経由しません</li>
+          <li>渡された情報はお客様が選んだ AI アプリのプライバシーポリシーに従って処理されます</li>
+          <li>相談内容に個人情報を含める場合はご注意ください</li>
+        </ul>
+      </section>
 
-    <!-- 5. 外部サービスとの連携 -->
-    <section id="s5">
-      <h2><span class="section-num">05</span>外部サービスとの連携</h2>
-      <p>
-        本アプリは、お客様が「Gemini に問う」ボタンをタップした場合に限り、
-        Android の Share Intent（共有機能）を使用して外部アプリへテキストデータを渡します。
-      </p>
+      <section id="ja-s6">
+        <h2><span class="section-num">06</span>広告・アフィリエイトについて</h2>
+        <p><strong style="color:var(--text)">Web版（tarot-draw.naru2.com）</strong></p>
+        <p>現在、A8.net を通じたアフィリエイト広告を掲載しています。広告をクリックすると A8.net のトラッキングサーバーを経由して広告主サイトへ遷移します。クリック計測のために 1×1 ピクセルのトラッキング画像が使用されます。将来的に Google AdSense 等のサードパーティ広告を追加する場合は、本ポリシーを更新します。</p>
+        <p><strong style="color:var(--text)">アプリ版（iOS・Android）</strong></p>
+        <p>Google AdMob による広告を配信しています。広告識別子（IDFA / GAID）が使用されます。</p>
+      </section>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>連携サービス</th>
-              <th>データの種類</th>
-              <th>タイミング</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gemini（Google）/ ChatGPT / Claude 等のAIアプリ</td>
-              <td>占い結果テキスト（スプレッド名・カード名・正逆位置・相談内容）</td>
-              <td>お客様がボタンをタップしたときのみ</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <section id="ja-s7">
+        <h2><span class="section-num">07</span>通知機能について <span class="platform-badge badge-app">アプリ版のみ</span></h2>
+        <ul>
+          <li>通知のために個人情報を収集・送信することはありません</li>
+          <li>通知の配信処理はお客様の端末内でのみ完結します</li>
+          <li>通知はいつでも端末の設定画面から停止できます</li>
+        </ul>
+      </section>
 
-      <p>
-        この共有はお客様の明示的な操作によってのみ実行されます。
-        自動的に外部サービスへデータを送信することはありません。
-      </p>
-      <p>
-        共有先の外部アプリ（Gemini 等）での情報の取り扱いについては、
-        各サービスのプライバシーポリシーをご参照ください。
-        本アプリは外部アプリでの情報の利用について責任を負いません。
-      </p>
-    </section>
+      <section id="ja-s8">
+        <h2><span class="section-num">08</span>データの保存場所</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB（ブラウザ内）</strong>：占い履歴を端末のブラウザ内に保存します。ブラウザのデータ削除またはサイトデータのクリアにより削除されます。<span class="platform-badge badge-web">Web版</span></li>
+          <li><strong style="color:var(--text)">SharedPreferences（端末内）</strong>：初回起動フラグ・広告の最終表示時刻を保存します。アンインストールで削除されます。<span class="platform-badge badge-app">アプリ版</span></li>
+          <li><strong style="color:var(--text)">Google のサーバー</strong>：Firebase・AdMob がクラッシュログ・広告識別子を送信します。<span class="platform-badge badge-app">アプリ版</span></li>
+          <li><strong style="color:var(--text)">Cloudflare のサーバー</strong>：CDN 経由のアクセスログを一時保存します（IP アドレス等）。<span class="platform-badge badge-web">Web版</span></li>
+        </ul>
+      </section>
 
-    <!-- 6. 通知機能について -->
-    <section id="s6">
-      <h2><span class="section-num">06</span>通知機能について</h2>
-      <p>
-        本アプリは、お客様が許可された場合に「デイリーカード通知」を毎朝お届けします。
-      </p>
-      <ul>
-        <li>通知のために個人情報を収集・送信することはありません</li>
-        <li>通知の内容はランダムに選ばれた1枚のタロットカードとその意味です</li>
-        <li>通知の配信処理はお客様の端末内でのみ完結します（外部サーバーを使用しません）</li>
-        <li>通知はいつでも端末の設定画面から停止できます</li>
-      </ul>
-      <p>
-        Android 13（API 33）以上の端末では、通知の送信にお客様の許可が必要です。
-        許可しなかった場合でも、本アプリの占い機能はすべてご利用いただけます。
-      </p>
-    </section>
+      <section id="ja-s9">
+        <h2><span class="section-num">09</span>お子様のプライバシー</h2>
+        <p>本アプリは13歳未満のお子様を対象としていません。本アプリは個人情報を一切収集しないため、意図せずお子様の個人情報が収集される可能性はありません。</p>
+      </section>
 
-    <!-- 7. データの保存場所 -->
-    <section id="s7">
-      <h2><span class="section-num">07</span>データの保存場所</h2>
-      <p>
-        本アプリが保存するすべてのデータはお客様の端末内にのみ存在します。
-        クラウドサービスや開発者のサーバーへのデータ転送は行いません。
-      </p>
-      <ul>
-        <li>
-          <strong style="color:var(--text)">SharedPreferences（端末内）</strong>：
-          初回起動フラグ・広告の最終表示時刻を端末のアプリ専用領域に保存します。
-          アプリをアンインストールすると削除されます。
-        </li>
-        <li>
-          <strong style="color:var(--text)">キャッシュ領域（端末内）</strong>：
-          SNS シェア用の画像を最大3件まで一時保存します。
-          端末のキャッシュ削除またはアンインストールにより削除されます。
-        </li>
-        <li>
-          <strong style="color:var(--text)">Google のサーバー</strong>：
-          Firebase Crashlytics・Analytics がクラッシュログ・使用統計情報を、
-          AdMob が広告識別子を自動的にGoogleのサーバーに送信します。
-          保持期間はGoogleのポリシーに従います。
-        </li>
-      </ul>
-    </section>
+      <section id="ja-s10">
+        <h2><span class="section-num">10</span>本ポリシーの変更</h2>
+        <p>法令の改正・機能追加等に応じて本ポリシーを変更することがあります。変更後のポリシーは本ページに掲載した時点で効力を生じます。重要な変更がある場合はアプリ内またはストアの更新情報でお知らせします。</p>
+      </section>
 
-    <!-- 8. お子様のプライバシー -->
-    <section id="s8">
-      <h2><span class="section-num">08</span>お子様のプライバシー</h2>
-      <p>
-        本アプリは13歳未満のお子様を対象としていません。
-        本アプリは個人情報を一切収集しないため、
-        意図せずお子様の個人情報が収集される可能性はありません。
-      </p>
-      <p>
-        保護者の方で、お子様が本アプリを利用していることに懸念がある場合は、
-        下記のお問い合わせ先までご連絡ください。
-      </p>
-    </section>
+      <section id="ja-s11">
+        <h2><span class="section-num">11</span>免責事項</h2>
+        <div class="highlight-box">
+          <p class="label">重要</p>
+          <p>本アプリのタロット占い結果は、エンターテインメントおよび自己洞察を目的としたものです。医療・法律・財務・人生の重要な判断の根拠とすることはお控えください。</p>
+        </div>
+      </section>
 
-    <!-- 9. 本ポリシーの変更 -->
-    <section id="s9">
-      <h2><span class="section-num">09</span>本ポリシーの変更</h2>
-      <p>
-        開発者は、法令の改正・アプリの機能追加・その他必要に応じて
-        本プライバシーポリシーを変更することがあります。
-      </p>
-      <ul>
-        <li>変更後のポリシーは本ページに掲載した時点で効力を生じます</li>
-        <li>重要な変更がある場合は、アプリ内またはストアの更新情報でお知らせします</li>
-        <li>変更日は本ページ冒頭の「最終更新日」に反映されます</li>
-      </ul>
-      <p>
-        本アプリを継続してご利用いただくことで、変更後のポリシーに同意したものとみなします。
-      </p>
-    </section>
+      <section id="ja-s12">
+        <h2><span class="section-num">12</span>お問い合わせ</h2>
+        <p>本プライバシーポリシーに関するご質問は、以下よりお問い合わせください。</p>
+        <ul>
+          <li>Web版・全般：<a href="https://github.com/naru76t-netizen/tarot-draw-PWA/issues">GitHub Issues</a></li>
+          <li>Android 版：Google Play ストアのアプリページ</li>
+        </ul>
+      </section>
 
-    <!-- 10. 免責事項 -->
-    <section id="s10">
-      <h2><span class="section-num">10</span>免責事項</h2>
-      <div class="highlight-box">
-        <p class="label">重要</p>
-        <p>
-          本アプリのタロット占い結果は、エンターテインメントおよび自己洞察を目的としたものです。
-          占い結果を医療・法律・財務・人生の重要な判断の根拠とすることはお控えください。
-          占い結果の解釈はお客様ご自身の責任において行ってください。
-        </p>
-      </div>
-      <p>
-        本アプリおよび本ポリシーは、予告なく変更・停止・終了することがあります。
-        これによってお客様に生じた損害について、開発者は責任を負いません。
-      </p>
-    </section>
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>本ポリシーは日本語を正文とします。</p>
+      </footer>
+    </div>
 
-    <!-- 11. お問い合わせ -->
-    <section id="s11">
-      <h2><span class="section-num">11</span>お問い合わせ</h2>
-      <p>
-        本プライバシーポリシーに関するご質問・ご意見は、
-        Google Play ストアのアプリページよりお問い合わせください。
-      </p>
-    </section>
+    <!-- ========== English ========== -->
+    <div data-lang="en">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>Privacy Policy</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">Established: March 20, 2026　／　Last updated: April 26, 2026</p>
+      </header>
 
-    <!-- フッター -->
-    <footer>
-      <p class="footer-app">Tarot Draw</p>
-      <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
-      <p>本ポリシーは日本語を正文とします。</p>
-    </footer>
+      <nav class="toc" aria-label="Table of Contents">
+        <p class="toc-title">Contents</p>
+        <ol>
+          <li><a href="#en-s1">Introduction</a></li>
+          <li><a href="#en-s2">Information We Collect</a></li>
+          <li><a href="#en-s3">How We Use Information</a></li>
+          <li><a href="#en-s4">Third-Party Disclosure</a></li>
+          <li><a href="#en-s5">Third-Party Services</a></li>
+          <li><a href="#en-s6">Advertising & Affiliate</a></li>
+          <li><a href="#en-s7">Push Notifications</a></li>
+          <li><a href="#en-s8">Data Storage</a></li>
+          <li><a href="#en-s9">Children's Privacy</a></li>
+          <li><a href="#en-s10">Policy Changes</a></li>
+          <li><a href="#en-s11">Disclaimer</a></li>
+          <li><a href="#en-s12">Contact</a></li>
+        </ol>
+      </nav>
+
+      <section id="en-s1">
+        <h2><span class="section-num">01</span>Introduction</h2>
+        <p>Thank you for using Tarot Draw. This Privacy Policy applies to all versions of Tarot Draw, including the iOS app, Android app, and Web app (tarot-draw.naru2.com).</p>
+        <div class="highlight-box gold">
+          <p class="label">Summary</p>
+          <p>Tarot Draw does not collect personal information such as your name or email address. No account registration is required.</p>
+        </div>
+      </section>
+
+      <section id="en-s2">
+        <h2><span class="section-num">02</span>Information We Collect</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Data Type</th><th>Collected</th><th>Storage Location</th><th>Platform</th></tr></thead>
+            <tbody>
+              <tr><td>Personal info (name, email, etc.)</td><td>Not collected</td><td>—</td><td>All</td></tr>
+              <tr><td>Location, camera, microphone</td><td>Not used</td><td>—</td><td>All</td></tr>
+              <tr><td>Tarot reading history</td><td>Stored locally</td><td>IndexedDB (browser) / device storage</td><td>All</td></tr>
+              <tr><td>Cookies & tracking pixels</td><td>Used</td><td>Browser</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>Crash logs & analytics (Firebase)</td><td>Auto-collected</td><td>Google servers</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>Advertising ID (AdMob)</td><td>Auto-collected</td><td>Google servers</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The Web app uses a service worker for offline caching. On iOS Safari, IndexedDB data may be cleared by ITP after 7 days of inactivity.</p>
+      </section>
+
+      <section id="en-s3">
+        <h2><span class="section-num">03</span>How We Use Information</h2>
+        <ul>
+          <li>To store and display your tarot reading history</li>
+          <li>To manage ad display frequency</li>
+          <li>To measure affiliate ad clicks via A8.net</li>
+          <li>To analyze crashes and improve app quality via Firebase Crashlytics (app only)</li>
+          <li>To serve ads via Google AdMob (app only)</li>
+        </ul>
+      </section>
+
+      <section id="en-s4">
+        <h2><span class="section-num">04</span>Third-Party Disclosure</h2>
+        <div class="highlight-box">
+          <p class="label">Important</p>
+          <p>We do not sell your information to any third party.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Service</th><th>Purpose</th><th>Platform</th></tr></thead>
+            <tbody>
+              <tr><td>Google (Firebase / AdMob)</td><td>Crash analytics, ad delivery</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>A8.net (affiliate network)</td><td>Ad click tracking</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>Cloudflare</td><td>CDN, access analytics</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><a href="https://policies.google.com/privacy">Google Privacy Policy</a>　／　<a href="https://www.a8.net/privacy.html">A8.net Privacy Policy</a></p>
+      </section>
+
+      <section id="en-s5">
+        <h2><span class="section-num">05</span>Third-Party Services</h2>
+        <p>When you tap "Ask AI", your card reading and question are shared with an external AI app (ChatGPT, Gemini, Claude, etc.) solely by your explicit action. We do not transmit data through our own servers. Please avoid including personal information in your question.</p>
+      </section>
+
+      <section id="en-s6">
+        <h2><span class="section-num">06</span>Advertising &amp; Affiliate</h2>
+        <p><strong style="color:var(--text)">Web app (tarot-draw.naru2.com)</strong></p>
+        <p>We display affiliate ads via A8.net. Clicking an ad routes through A8.net's tracking server. A 1×1 tracking pixel is used to measure clicks. If we add Google AdSense or other third-party advertising in the future, this policy will be updated.</p>
+        <p><strong style="color:var(--text)">Mobile apps (iOS &amp; Android)</strong></p>
+        <p>Ads are served by Google AdMob using the advertising identifier (IDFA / GAID).</p>
+      </section>
+
+      <section id="en-s7">
+        <h2><span class="section-num">07</span>Push Notifications <span class="platform-badge badge-app">App only</span></h2>
+        <ul>
+          <li>No personal information is collected or transmitted for notifications</li>
+          <li>Notification delivery is processed entirely on your device</li>
+          <li>You can disable notifications at any time in device settings</li>
+        </ul>
+      </section>
+
+      <section id="en-s8">
+        <h2><span class="section-num">08</span>Data Storage</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (browser)</strong>: Reading history is stored locally in your browser. Cleared when you delete site data. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">SharedPreferences (device)</strong>: First-launch flag and ad timing. Deleted on uninstall. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Google servers</strong>: Firebase and AdMob send crash logs and advertising IDs. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Cloudflare servers</strong>: Temporary access logs (IP addresses, etc.) via CDN. <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="en-s9">
+        <h2><span class="section-num">09</span>Children's Privacy</h2>
+        <p>Tarot Draw is not intended for children under 13. Since we do not collect personal information, there is no risk of inadvertently collecting data from minors.</p>
+      </section>
+
+      <section id="en-s10">
+        <h2><span class="section-num">10</span>Policy Changes</h2>
+        <p>We may update this policy as required by law or due to new features. Changes take effect when posted on this page. Significant changes will be announced in the app or store release notes.</p>
+      </section>
+
+      <section id="en-s11">
+        <h2><span class="section-num">11</span>Disclaimer</h2>
+        <div class="highlight-box">
+          <p class="label">Important</p>
+          <p>Tarot readings are for entertainment and self-reflection only. Please do not use them as a basis for medical, legal, financial, or life decisions.</p>
+        </div>
+      </section>
+
+      <section id="en-s12">
+        <h2><span class="section-num">12</span>Contact</h2>
+        <ul>
+          <li>Web app &amp; general: <a href="https://github.com/naru76t-netizen/tarot-draw-PWA/issues">GitHub Issues</a></li>
+          <li>Android app: Google Play Store app page</li>
+        </ul>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>The Japanese version of this policy is the authoritative text.</p>
+      </footer>
+    </div>
+
+    <!-- ========== 简体中文 ========== -->
+    <div data-lang="zh-CN">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>隐私政策</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">制定日：2026年3月20日　／　最终更新日：2026年4月26日</p>
+      </header>
+
+      <section id="zh-cn-s1">
+        <h2><span class="section-num">01</span>概述</h2>
+        <p>本隐私政策适用于 Tarot Draw 的所有版本，包括 iOS 应用、Android 应用及 Web 应用（tarot-draw.naru2.com）。</p>
+        <div class="highlight-box gold">
+          <p class="label">要点</p>
+          <p>本应用不收集姓名、电子邮件地址、位置信息等个人信息，无需注册账号。</p>
+        </div>
+      </section>
+
+      <section id="zh-cn-s2">
+        <h2><span class="section-num">02</span>收集的信息</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>数据类型</th><th>是否收集</th><th>存储位置</th><th>适用版本</th></tr></thead>
+            <tbody>
+              <tr><td>个人信息（姓名、邮箱等）</td><td>不收集</td><td>—</td><td>全版本</td></tr>
+              <tr><td>位置、摄像头、麦克风</td><td>不使用</td><td>—</td><td>全版本</td></tr>
+              <tr><td>塔罗占卜历史记录</td><td>本地保存</td><td>IndexedDB（浏览器）/ 设备存储</td><td>全版本</td></tr>
+              <tr><td>Cookie 及追踪像素</td><td>使用</td><td>浏览器</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
+              <tr><td>崩溃日志·使用统计（Firebase）</td><td>自动收集</td><td>Google 服务器</td><td><span class="platform-badge badge-app">应用版</span></td></tr>
+              <tr><td>广告标识符（AdMob）</td><td>自动收集</td><td>Google 服务器</td><td><span class="platform-badge badge-app">应用版</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="zh-cn-s3">
+        <h2><span class="section-num">03</span>广告与联盟营销</h2>
+        <p><strong style="color:var(--text)">Web 版</strong>：通过 A8.net 展示联盟广告，点击广告时会经由 A8.net 追踪服务器跳转，并使用 1×1 像素追踪图片计量点击。未来如引入 Google AdSense 等第三方广告，将更新本政策。</p>
+        <p><strong style="color:var(--text)">应用版</strong>：通过 Google AdMob 投放广告，使用广告标识符（IDFA / GAID）。</p>
+      </section>
+
+      <section id="zh-cn-s4">
+        <h2><span class="section-num">04</span>数据存储</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB（浏览器）</strong>：占卜历史存储于本地浏览器，清除网站数据后删除。<span class="platform-badge badge-web">Web版</span></li>
+          <li><strong style="color:var(--text)">Google 服务器</strong>：Firebase 及 AdMob 发送崩溃日志及广告标识符。<span class="platform-badge badge-app">应用版</span></li>
+          <li><strong style="color:var(--text)">Cloudflare 服务器</strong>：CDN 临时访问日志（IP 地址等）。<span class="platform-badge badge-web">Web版</span></li>
+        </ul>
+      </section>
+
+      <section id="zh-cn-s5">
+        <h2><span class="section-num">05</span>免责声明</h2>
+        <div class="highlight-box">
+          <p class="label">重要</p>
+          <p>塔罗占卜结果仅供娱乐和自我反思，请勿将其作为医疗、法律、财务或重要人生决策的依据。</p>
+        </div>
+      </section>
+
+      <section id="zh-cn-s6">
+        <h2><span class="section-num">06</span>联系我们</h2>
+        <ul>
+          <li>Web 版及通用：<a href="https://github.com/naru76t-netizen/tarot-draw-PWA/issues">GitHub Issues</a></li>
+          <li>Android 版：Google Play 商店应用页面</li>
+        </ul>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>本政策以日语版本为准。</p>
+      </footer>
+    </div>
+
+    <!-- ========== 繁體中文 ========== -->
+    <div data-lang="zh-TW">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>隱私權政策</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年4月26日</p>
+      </header>
+
+      <section id="zh-tw-s1">
+        <h2><span class="section-num">01</span>概述</h2>
+        <p>本隱私權政策適用於 Tarot Draw 的所有版本，包含 iOS 應用程式、Android 應用程式及 Web 應用程式（tarot-draw.naru2.com）。</p>
+        <div class="highlight-box gold">
+          <p class="label">重點</p>
+          <p>本應用程式不收集姓名、電子郵件地址、位置資訊等個人資料，無需註冊帳號。</p>
+        </div>
+      </section>
+
+      <section id="zh-tw-s2">
+        <h2><span class="section-num">02</span>收集的資訊</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>資料類型</th><th>是否收集</th><th>儲存位置</th><th>適用版本</th></tr></thead>
+            <tbody>
+              <tr><td>個人資料（姓名、電郵等）</td><td>不收集</td><td>—</td><td>全版本</td></tr>
+              <tr><td>位置、相機、麥克風</td><td>不使用</td><td>—</td><td>全版本</td></tr>
+              <tr><td>塔羅占卜歷史紀錄</td><td>本機儲存</td><td>IndexedDB（瀏覽器）/ 裝置儲存</td><td>全版本</td></tr>
+              <tr><td>Cookie 及追蹤像素</td><td>使用</td><td>瀏覽器</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
+              <tr><td>當機日誌·使用統計（Firebase）</td><td>自動收集</td><td>Google 伺服器</td><td><span class="platform-badge badge-app">應用版</span></td></tr>
+              <tr><td>廣告識別碼（AdMob）</td><td>自動收集</td><td>Google 伺服器</td><td><span class="platform-badge badge-app">應用版</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="zh-tw-s3">
+        <h2><span class="section-num">03</span>廣告與聯盟行銷</h2>
+        <p><strong style="color:var(--text)">Web 版</strong>：透過 A8.net 刊登聯盟廣告，點擊廣告時會經由 A8.net 追蹤伺服器導向，並使用 1×1 像素追蹤圖片計測點擊。未來如導入 Google AdSense 等第三方廣告，將更新本政策。</p>
+        <p><strong style="color:var(--text)">應用程式版</strong>：透過 Google AdMob 投放廣告，使用廣告識別碼（IDFA / GAID）。</p>
+      </section>
+
+      <section id="zh-tw-s4">
+        <h2><span class="section-num">04</span>資料儲存</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB（瀏覽器）</strong>：占卜歷史儲存於本機瀏覽器，清除網站資料後刪除。<span class="platform-badge badge-web">Web版</span></li>
+          <li><strong style="color:var(--text)">Google 伺服器</strong>：Firebase 及 AdMob 傳送當機日誌及廣告識別碼。<span class="platform-badge badge-app">應用版</span></li>
+          <li><strong style="color:var(--text)">Cloudflare 伺服器</strong>：CDN 暫存存取日誌（IP 位址等）。<span class="platform-badge badge-web">Web版</span></li>
+        </ul>
+      </section>
+
+      <section id="zh-tw-s5">
+        <h2><span class="section-num">05</span>免責聲明</h2>
+        <div class="highlight-box">
+          <p class="label">重要</p>
+          <p>塔羅占卜結果僅供娛樂及自我省思，請勿將其作為醫療、法律、財務或重要人生決策的依據。</p>
+        </div>
+      </section>
+
+      <section id="zh-tw-s6">
+        <h2><span class="section-num">06</span>聯絡我們</h2>
+        <ul>
+          <li>Web 版及一般事項：<a href="https://github.com/naru76t-netizen/tarot-draw-PWA/issues">GitHub Issues</a></li>
+          <li>Android 版：Google Play 商店應用程式頁面</li>
+        </ul>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>本政策以日語版本為準。</p>
+      </footer>
+    </div>
+
+    <!-- ========== 한국어 ========== -->
+    <div data-lang="ko">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>개인정보 처리방침</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">제정일: 2026년 3월 20일　／　최종 업데이트: 2026년 4월 26일</p>
+      </header>
+
+      <section id="ko-s1">
+        <h2><span class="section-num">01</span>개요</h2>
+        <p>본 개인정보 처리방침은 iOS 앱, Android 앱, Web 앱(tarot-draw.naru2.com)을 포함한 Tarot Draw의 모든 버전에 적용됩니다.</p>
+        <div class="highlight-box gold">
+          <p class="label">요점</p>
+          <p>이 앱은 이름, 이메일 주소, 위치 정보 등의 개인정보를 수집하지 않습니다. 계정 등록이 필요하지 않습니다.</p>
+        </div>
+      </section>
+
+      <section id="ko-s2">
+        <h2><span class="section-num">02</span>수집하는 정보</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>데이터 유형</th><th>수집 여부</th><th>저장 위치</th><th>적용 버전</th></tr></thead>
+            <tbody>
+              <tr><td>개인정보(이름, 이메일 등)</td><td>수집 안 함</td><td>—</td><td>전체</td></tr>
+              <tr><td>위치, 카메라, 마이크</td><td>사용 안 함</td><td>—</td><td>전체</td></tr>
+              <tr><td>타로 점 기록</td><td>로컬 저장</td><td>IndexedDB(브라우저) / 기기 저장소</td><td>전체</td></tr>
+              <tr><td>쿠키 및 추적 픽셀</td><td>사용</td><td>브라우저</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>충돌 로그·사용 통계(Firebase)</td><td>자동 수집</td><td>Google 서버</td><td><span class="platform-badge badge-app">앱</span></td></tr>
+              <tr><td>광고 식별자(AdMob)</td><td>자동 수집</td><td>Google 서버</td><td><span class="platform-badge badge-app">앱</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="ko-s3">
+        <h2><span class="section-num">03</span>광고 및 제휴 마케팅</h2>
+        <p><strong style="color:var(--text)">Web 버전</strong>: A8.net을 통해 제휴 광고를 게재합니다. 광고 클릭 시 A8.net 추적 서버를 경유하며 1×1 픽셀 추적 이미지를 사용합니다. 향후 Google AdSense 등을 도입할 경우 본 방침을 업데이트합니다.</p>
+        <p><strong style="color:var(--text)">앱 버전</strong>: Google AdMob을 통해 광고를 제공하며 광고 식별자(IDFA / GAID)를 사용합니다.</p>
+      </section>
+
+      <section id="ko-s4">
+        <h2><span class="section-num">04</span>데이터 저장</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB(브라우저)</strong>: 점 기록이 로컬 브라우저에 저장되며 사이트 데이터 삭제 시 제거됩니다. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">Google 서버</strong>: Firebase 및 AdMob이 충돌 로그와 광고 식별자를 전송합니다. <span class="platform-badge badge-app">앱</span></li>
+          <li><strong style="color:var(--text)">Cloudflare 서버</strong>: CDN 임시 접근 로그(IP 주소 등). <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="ko-s5">
+        <h2><span class="section-num">05</span>면책 조항</h2>
+        <div class="highlight-box">
+          <p class="label">중요</p>
+          <p>타로 점 결과는 오락 및 자기 성찰을 위한 것입니다. 의료, 법률, 재무 또는 중요한 인생 결정의 근거로 사용하지 마십시오.</p>
+        </div>
+      </section>
+
+      <section id="ko-s6">
+        <h2><span class="section-num">06</span>문의</h2>
+        <ul>
+          <li>Web 버전 및 일반: <a href="https://github.com/naru76t-netizen/tarot-draw-PWA/issues">GitHub Issues</a></li>
+          <li>Android 버전: Google Play 스토어 앱 페이지</li>
+        </ul>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>본 방침은 일본어 버전을 정본으로 합니다.</p>
+      </footer>
+    </div>
 
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(function(el) {
+        el.classList.toggle('active', el.dataset.lang === lang);
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.textContent.trim() === langLabel(lang));
+      });
+      try { localStorage.setItem('pp-lang', lang); } catch(e) {}
+      document.documentElement.lang = lang;
+    }
+
+    function langLabel(lang) {
+      return { ja: '日本語', en: 'English', 'zh-CN': '简体中文', 'zh-TW': '繁體中文', ko: '한국어' }[lang] || '日本語';
+    }
+
+    function detectLang() {
+      try {
+        var saved = localStorage.getItem('pp-lang');
+        if (saved) return saved;
+      } catch(e) {}
+      var nav = navigator.language || 'ja';
+      if (nav.startsWith('zh-TW') || nav.startsWith('zh-Hant')) return 'zh-TW';
+      if (nav.startsWith('zh')) return 'zh-CN';
+      if (nav.startsWith('ko')) return 'ko';
+      if (nav.startsWith('en')) return 'en';
+      return 'ja';
+    }
+
+    setLang(detectLang());
+  </script>
 </body>
 </html>
