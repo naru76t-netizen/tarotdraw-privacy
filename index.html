@@ -201,7 +201,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年5月6日</p>
+        <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年5月9日</p>
       </header>
 
       <nav class="toc" aria-label="目次">
@@ -239,7 +239,9 @@
             <thead><tr><th>情報の種類</th><th>収集の有無</th><th>保存場所</th><th>対象</th></tr></thead>
             <tbody>
               <tr><td>氏名・メールアドレス等の個人情報</td><td>収集しない</td><td>—</td><td>全版</td></tr>
-              <tr><td>位置情報・カメラ・マイク</td><td>使用しない</td><td>—</td><td>全版</td></tr>
+              <tr><td>カメラ・マイク</td><td>使用しない</td><td>—</td><td>全版</td></tr>
+              <tr><td>GPS 位置情報</td><td>使用しない（出生地はアプリ内の都市リストから選択）</td><td>—</td><td>全版</td></tr>
+              <tr><td>ホロスコープ用プロファイル（生年月日・出生時刻・出生地）</td><td>任意で保存（ホロスコープ機能を使った場合のみ）</td><td>端末内 DataStore <span class="platform-badge badge-app">アプリ版</span> / IndexedDB <span class="platform-badge badge-web">Web版</span></td><td>全版</td></tr>
               <tr><td>占い履歴（カード・日時・テーマ）</td><td>保存する</td><td>端末内 IndexedDB <span class="platform-badge badge-web">Web版</span> / 端末内ストレージ <span class="platform-badge badge-app">アプリ版</span></td><td>全版</td></tr>
               <tr><td>広告の最終表示時刻・初回起動フラグ</td><td>保存する</td><td>端末内（SharedPreferences）</td><td><span class="platform-badge badge-app">アプリ版</span></td></tr>
               <tr><td>Cookie・トラッキングピクセル（広告計測）</td><td>使用する</td><td>ブラウザ内</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
@@ -259,6 +261,7 @@
           <li>A8.net アフィリエイト広告のクリック計測</li>
           <li>Firebase Crashlytics によるクラッシュ解析・アプリ品質改善（アプリ版）</li>
           <li>Google AdMob による広告配信（アプリ版）</li>
+          <li>ホロスコープ計算（太陽星座・月星座・アセンダント・9 惑星位置）</li>
         </ul>
       </section>
 
@@ -290,6 +293,7 @@
           <li>本アプリのサーバーを経由しません</li>
           <li>渡された情報はお客様が選んだ AI アプリのプライバシーポリシーに従って処理されます</li>
           <li>相談内容に個人情報を含める場合はご注意ください</li>
+          <li>「ホロスコープを同梱する」トグルがオンの場合、生年月日・出生時刻・出生地もテキストに含まれます</li>
         </ul>
       </section>
 
@@ -315,6 +319,7 @@
         <ul>
           <li><strong style="color:var(--text)">IndexedDB（ブラウザ内）</strong>：占い履歴を端末のブラウザ内に保存します。ブラウザのデータ削除またはサイトデータのクリアにより削除されます。<span class="platform-badge badge-web">Web版</span></li>
           <li><strong style="color:var(--text)">SharedPreferences（端末内）</strong>：初回起動フラグ・広告の最終表示時刻を保存します。アンインストールで削除されます。<span class="platform-badge badge-app">アプリ版</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences（端末内）</strong>：ホロスコープ用プロファイル（生年月日・出生時刻・出生地）を保存します。アプリ内「プロファイルを削除」ボタンまたはアンインストールで削除されます。<span class="platform-badge badge-app">アプリ版</span></li>
           <li><strong style="color:var(--text)">Google のサーバー</strong>：Firebase・AdMob がクラッシュログ・広告識別子を送信します。<span class="platform-badge badge-app">アプリ版</span></li>
           <li><strong style="color:var(--text)">Cloudflare のサーバー</strong>：CDN 経由のアクセスログを一時保存します（IP アドレス等）。<span class="platform-badge badge-web">Web版</span></li>
         </ul>
@@ -346,6 +351,7 @@
         <ul>
           <li><span class="platform-badge badge-app">アプリ版</span>本アプリをアンインストールするか、Android の「設定 → アプリ → Tarot Draw → ストレージ → データを消去」で端末内データを完全削除します。</li>
           <li><span class="platform-badge badge-web">Web版</span>ブラウザの「サイト設定 → データを削除」または「履歴とサイトデータの削除」を使用します。</li>
+          <li><span class="platform-badge badge-app">アプリ版</span>ホロスコープ用プロファイルは、生年月日入力画面の「プロファイルを削除」ボタンでいつでも個別に削除できます。</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. 広告 ID のリセット <span class="platform-badge badge-app">Android アプリ版のみ</span></h3>
@@ -392,7 +398,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">Established: March 20, 2026　／　Last updated: May 6, 2026</p>
+        <p class="meta">Established: March 20, 2026　／　Last updated: May 9, 2026</p>
       </header>
 
       <nav class="toc" aria-label="Table of Contents">
@@ -429,7 +435,9 @@
             <thead><tr><th>Data Type</th><th>Collected</th><th>Storage Location</th><th>Platform</th></tr></thead>
             <tbody>
               <tr><td>Personal info (name, email, etc.)</td><td>Not collected</td><td>—</td><td>All</td></tr>
-              <tr><td>Location, camera, microphone</td><td>Not used</td><td>—</td><td>All</td></tr>
+              <tr><td>Camera, microphone</td><td>Not used</td><td>—</td><td>All</td></tr>
+              <tr><td>GPS location</td><td>Not used (birth city is selected from an in-app list)</td><td>—</td><td>All</td></tr>
+              <tr><td>Horoscope profile (birth date, time, place)</td><td>Stored optionally (only when you use the horoscope feature)</td><td>On-device DataStore <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>All</td></tr>
               <tr><td>Tarot reading history</td><td>Stored locally</td><td>IndexedDB (browser) / device storage</td><td>All</td></tr>
               <tr><td>Cookies &amp; tracking pixels</td><td>Used</td><td>Browser</td><td><span class="platform-badge badge-web">Web</span></td></tr>
               <tr><td>Crash logs &amp; analytics (Firebase)</td><td>Auto-collected</td><td>Google servers</td><td><span class="platform-badge badge-app">App</span></td></tr>
@@ -448,6 +456,7 @@
           <li>To measure affiliate ad clicks via A8.net</li>
           <li>To analyze crashes and improve app quality via Firebase Crashlytics (app only)</li>
           <li>To serve ads via Google AdMob (app only)</li>
+          <li>To calculate your horoscope (Sun sign, Moon sign, Ascendant, nine planet positions)</li>
         </ul>
       </section>
 
@@ -473,6 +482,7 @@
       <section id="en-s5">
         <h2><span class="section-num">05</span>Third-Party Services</h2>
         <p>When you tap "Ask AI", your card reading and question are shared with an external AI app (ChatGPT, Gemini, Claude, etc.) solely by your explicit action. We do not transmit data through our own servers. Please avoid including personal information in your question.</p>
+        <p>When the "include horoscope" toggle is on, your birth date, time, and place are also included in the shared text.</p>
       </section>
 
       <section id="en-s6">
@@ -497,6 +507,7 @@
         <ul>
           <li><strong style="color:var(--text)">IndexedDB (browser)</strong>: Reading history is stored locally in your browser. Cleared when you delete site data. <span class="platform-badge badge-web">Web</span></li>
           <li><strong style="color:var(--text)">SharedPreferences (device)</strong>: First-launch flag and ad timing. Deleted on uninstall. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (device)</strong>: Stores your horoscope profile (birth date, time, place). Deleted by the in-app "Delete profile" button or by uninstalling the app. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Google servers</strong>: Firebase and AdMob send crash logs and advertising IDs. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Cloudflare servers</strong>: Temporary access logs (IP addresses, etc.) via CDN. <span class="platform-badge badge-web">Web</span></li>
         </ul>
@@ -528,6 +539,7 @@
         <ul>
           <li><span class="platform-badge badge-app">App</span>Uninstall the app, or go to Android Settings → Apps → Tarot Draw → Storage → Clear data to completely remove on-device data.</li>
           <li><span class="platform-badge badge-web">Web</span>Use your browser's "Site settings → Clear data" or "Clear browsing history and site data".</li>
+          <li><span class="platform-badge badge-app">App</span>Your horoscope profile can be deleted at any time from the birth-date entry screen using the "Delete profile" button.</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. Reset Advertising ID <span class="platform-badge badge-app">Android app only</span></h3>
@@ -574,7 +586,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">制定日：2026年3月20日　／　最终更新日：2026年5月6日</p>
+        <p class="meta">制定日：2026年3月20日　／　最终更新日：2026年5月9日</p>
       </header>
 
       <section id="zh-cn-s1">
@@ -593,7 +605,9 @@
             <thead><tr><th>数据类型</th><th>是否收集</th><th>存储位置</th><th>适用版本</th></tr></thead>
             <tbody>
               <tr><td>个人信息（姓名、邮箱等）</td><td>不收集</td><td>—</td><td>全版本</td></tr>
-              <tr><td>位置、摄像头、麦克风</td><td>不使用</td><td>—</td><td>全版本</td></tr>
+              <tr><td>摄像头、麦克风</td><td>不使用</td><td>—</td><td>全版本</td></tr>
+              <tr><td>GPS 位置信息</td><td>不使用（出生地仅从应用内城市列表中选择）</td><td>—</td><td>全版本</td></tr>
+              <tr><td>星盘资料（出生日期、时刻、地点）</td><td>仅在使用星盘功能时选择性保存</td><td>设备内 DataStore <span class="platform-badge badge-app">应用版</span> / IndexedDB <span class="platform-badge badge-web">Web版</span></td><td>全版本</td></tr>
               <tr><td>塔罗占卜历史记录</td><td>本地保存</td><td>IndexedDB（浏览器）/ 设备存储</td><td>全版本</td></tr>
               <tr><td>Cookie 及追踪像素</td><td>使用</td><td>浏览器</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
               <tr><td>崩溃日志·使用统计（Firebase）</td><td>自动收集</td><td>Google 服务器</td><td><span class="platform-badge badge-app">应用版</span></td></tr>
@@ -613,6 +627,7 @@
         <h2><span class="section-num">04</span>数据存储</h2>
         <ul>
           <li><strong style="color:var(--text)">IndexedDB（浏览器）</strong>：占卜历史存储于本地浏览器，清除网站数据后删除。<span class="platform-badge badge-web">Web版</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences（设备内）</strong>：星盘资料（出生日期、时刻、地点）。可通过应用内「删除资料」按钮或卸载删除。<span class="platform-badge badge-app">应用版</span></li>
           <li><strong style="color:var(--text)">Google 服务器</strong>：Firebase 及 AdMob 发送崩溃日志及广告标识符。<span class="platform-badge badge-app">应用版</span></li>
           <li><strong style="color:var(--text)">Cloudflare 服务器</strong>：CDN 临时访问日志（IP 地址等）。<span class="platform-badge badge-web">Web版</span></li>
         </ul>
@@ -634,6 +649,7 @@
         <ul>
           <li><span class="platform-badge badge-app">应用版</span>卸载本应用,或前往 Android「设置 → 应用 → Tarot Draw → 存储 → 清除数据」完全删除设备内数据。</li>
           <li><span class="platform-badge badge-web">Web 版</span>使用浏览器的「网站设置 → 清除数据」或「清除浏览历史和网站数据」。</li>
+          <li><span class="platform-badge badge-app">应用版</span>星盘资料可在出生日期输入界面通过「删除资料」按钮随时单独删除。</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. 重置广告 ID <span class="platform-badge badge-app">仅限 Android 应用版</span></h3>
@@ -680,7 +696,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年5月6日</p>
+        <p class="meta">制定日：2026年3月20日　／　最終更新日：2026年5月9日</p>
       </header>
 
       <section id="zh-tw-s1">
@@ -699,7 +715,9 @@
             <thead><tr><th>資料類型</th><th>是否收集</th><th>儲存位置</th><th>適用版本</th></tr></thead>
             <tbody>
               <tr><td>個人資料（姓名、電郵等）</td><td>不收集</td><td>—</td><td>全版本</td></tr>
-              <tr><td>位置、相機、麥克風</td><td>不使用</td><td>—</td><td>全版本</td></tr>
+              <tr><td>相機、麥克風</td><td>不使用</td><td>—</td><td>全版本</td></tr>
+              <tr><td>GPS 位置資訊</td><td>不使用（出生地僅從應用程式內的城市清單中選擇）</td><td>—</td><td>全版本</td></tr>
+              <tr><td>星盤資料（出生日期、時刻、地點）</td><td>僅在使用星盤功能時選擇性保存</td><td>裝置內 DataStore <span class="platform-badge badge-app">應用版</span> / IndexedDB <span class="platform-badge badge-web">Web版</span></td><td>全版本</td></tr>
               <tr><td>塔羅占卜歷史紀錄</td><td>本機儲存</td><td>IndexedDB（瀏覽器）/ 裝置儲存</td><td>全版本</td></tr>
               <tr><td>Cookie 及追蹤像素</td><td>使用</td><td>瀏覽器</td><td><span class="platform-badge badge-web">Web版</span></td></tr>
               <tr><td>當機日誌·使用統計（Firebase）</td><td>自動收集</td><td>Google 伺服器</td><td><span class="platform-badge badge-app">應用版</span></td></tr>
@@ -719,6 +737,7 @@
         <h2><span class="section-num">04</span>資料儲存</h2>
         <ul>
           <li><strong style="color:var(--text)">IndexedDB（瀏覽器）</strong>：占卜歷史儲存於本機瀏覽器，清除網站資料後刪除。<span class="platform-badge badge-web">Web版</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences（裝置內）</strong>：星盤資料（出生日期、時刻、地點）。可透過應用程式內「刪除資料」按鈕或解除安裝刪除。<span class="platform-badge badge-app">應用版</span></li>
           <li><strong style="color:var(--text)">Google 伺服器</strong>：Firebase 及 AdMob 傳送當機日誌及廣告識別碼。<span class="platform-badge badge-app">應用版</span></li>
           <li><strong style="color:var(--text)">Cloudflare 伺服器</strong>：CDN 暫存存取日誌（IP 位址等）。<span class="platform-badge badge-web">Web版</span></li>
         </ul>
@@ -740,6 +759,7 @@
         <ul>
           <li><span class="platform-badge badge-app">應用程式版</span>解除安裝本應用程式,或前往 Android「設定 → 應用程式 → Tarot Draw → 儲存空間 → 清除資料」完全刪除裝置內資料。</li>
           <li><span class="platform-badge badge-web">Web 版</span>使用瀏覽器的「網站設定 → 清除資料」或「清除瀏覽記錄和網站資料」。</li>
+          <li><span class="platform-badge badge-app">應用版</span>星盤資料可於出生日期輸入畫面透過「刪除資料」按鈕隨時單獨刪除。</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. 重設廣告 ID <span class="platform-badge badge-app">僅限 Android 應用程式版</span></h3>
@@ -786,7 +806,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">제정일: 2026년 3월 20일　／　최종 업데이트: 2026년 5월 6일</p>
+        <p class="meta">제정일: 2026년 3월 20일　／　최종 업데이트: 2026년 5월 9일</p>
       </header>
 
       <section id="ko-s1">
@@ -805,7 +825,9 @@
             <thead><tr><th>데이터 유형</th><th>수집 여부</th><th>저장 위치</th><th>적용 버전</th></tr></thead>
             <tbody>
               <tr><td>개인정보(이름, 이메일 등)</td><td>수집 안 함</td><td>—</td><td>전체</td></tr>
-              <tr><td>위치, 카메라, 마이크</td><td>사용 안 함</td><td>—</td><td>전체</td></tr>
+              <tr><td>카메라, 마이크</td><td>사용 안 함</td><td>—</td><td>전체</td></tr>
+              <tr><td>GPS 위치 정보</td><td>사용 안 함(출생지는 앱 내 도시 목록에서 선택)</td><td>—</td><td>전체</td></tr>
+              <tr><td>호로스코프 프로필(생년월일, 출생 시각, 출생지)</td><td>호로스코프 기능 이용 시에만 선택적으로 저장</td><td>단말 내 DataStore <span class="platform-badge badge-app">앱</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>전체</td></tr>
               <tr><td>타로 점 기록</td><td>로컬 저장</td><td>IndexedDB(브라우저) / 기기 저장소</td><td>전체</td></tr>
               <tr><td>쿠키 및 추적 픽셀</td><td>사용</td><td>브라우저</td><td><span class="platform-badge badge-web">Web</span></td></tr>
               <tr><td>충돌 로그·사용 통계(Firebase)</td><td>자동 수집</td><td>Google 서버</td><td><span class="platform-badge badge-app">앱</span></td></tr>
@@ -825,6 +847,7 @@
         <h2><span class="section-num">04</span>데이터 저장</h2>
         <ul>
           <li><strong style="color:var(--text)">IndexedDB(브라우저)</strong>: 점 기록이 로컬 브라우저에 저장되며 사이트 데이터 삭제 시 제거됩니다. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences(단말 내)</strong>: 호로스코프 프로필(생년월일, 출생 시각, 출생지)을 저장합니다. 앱 내 "프로필 삭제" 버튼 또는 앱 제거로 삭제됩니다. <span class="platform-badge badge-app">앱</span></li>
           <li><strong style="color:var(--text)">Google 서버</strong>: Firebase 및 AdMob이 충돌 로그와 광고 식별자를 전송합니다. <span class="platform-badge badge-app">앱</span></li>
           <li><strong style="color:var(--text)">Cloudflare 서버</strong>: CDN 임시 접근 로그(IP 주소 등). <span class="platform-badge badge-web">Web</span></li>
         </ul>
@@ -846,6 +869,7 @@
         <ul>
           <li><span class="platform-badge badge-app">앱 버전</span>앱을 제거하거나 Android「설정 → 앱 → Tarot Draw → 저장공간 → 데이터 지우기」에서 기기 내 데이터를 완전히 삭제합니다.</li>
           <li><span class="platform-badge badge-web">Web 버전</span>브라우저의「사이트 설정 → 데이터 삭제」또는「검색 기록 및 사이트 데이터 삭제」를 사용합니다.</li>
+          <li><span class="platform-badge badge-app">앱 버전</span>호로스코프 프로필은 생년월일 입력 화면의「프로필 삭제」버튼으로 언제든지 개별 삭제할 수 있습니다.</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. 광고 ID 재설정 <span class="platform-badge badge-app">Android 앱 버전만</span></h3>
@@ -892,7 +916,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">Criado em: 20 de março de 2026　／　Última atualização: 6 de maio de 2026</p>
+        <p class="meta">Criado em: 20 de março de 2026　／　Última atualização: 9 de maio de 2026</p>
       </header>
 
       <section id="pt-s1">
@@ -911,7 +935,9 @@
             <thead><tr><th>Tipo de Dado</th><th>Coleta</th><th>Local de Armazenamento</th><th>Plataforma</th></tr></thead>
             <tbody>
               <tr><td>Informações pessoais (nome, e-mail, etc.)</td><td>Não coletado</td><td>—</td><td>Todas</td></tr>
-              <tr><td>Localização, câmera, microfone</td><td>Não utilizado</td><td>—</td><td>Todas</td></tr>
+              <tr><td>Câmera, microfone</td><td>Não utilizados</td><td>—</td><td>Todas</td></tr>
+              <tr><td>Localização GPS</td><td>Não utilizada (o local de nascimento é escolhido em uma lista de cidades dentro do app)</td><td>—</td><td>Todas</td></tr>
+              <tr><td>Perfil de horóscopo (data, hora e local de nascimento)</td><td>Armazenado opcionalmente (apenas quando você usa a função horóscopo)</td><td>DataStore no dispositivo <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Todas</td></tr>
               <tr><td>Histórico de leituras de tarô</td><td>Salvo localmente</td><td>IndexedDB (navegador) / armazenamento do dispositivo</td><td>Todas</td></tr>
               <tr><td>Cookies e pixels de rastreamento</td><td>Utilizados</td><td>Navegador</td><td><span class="platform-badge badge-web">Web</span></td></tr>
               <tr><td>Logs de falha e estatísticas (Firebase)</td><td>Coletados automaticamente</td><td>Servidores Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
@@ -931,6 +957,7 @@
         <h2><span class="section-num">04</span>Armazenamento de Dados</h2>
         <ul>
           <li><strong style="color:var(--text)">IndexedDB (navegador)</strong>: O histórico de leituras é armazenado localmente no navegador e excluído ao limpar os dados do site. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (dispositivo)</strong>: Armazena seu perfil de horóscopo (data, hora e local de nascimento). Removido pelo botão "Excluir perfil" no app ou ao desinstalar. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Servidores Google</strong>: Firebase e AdMob enviam logs de falha e IDs de publicidade. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Servidores Cloudflare</strong>: Logs de acesso temporários via CDN (endereços IP, etc.). <span class="platform-badge badge-web">Web</span></li>
         </ul>
@@ -952,6 +979,7 @@
         <ul>
           <li><span class="platform-badge badge-app">App</span>Desinstale o aplicativo, ou vá em Configurações Android → Apps → Tarot Draw → Armazenamento → Limpar dados para remover completamente os dados do dispositivo.</li>
           <li><span class="platform-badge badge-web">Web</span>Use as opções do navegador "Configurações do site → Limpar dados" ou "Limpar histórico de navegação e dados do site".</li>
+          <li><span class="platform-badge badge-app">App</span>Seu perfil de horóscopo pode ser excluído a qualquer momento na tela de data de nascimento, usando o botão "Excluir perfil".</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. Redefinir o ID de Publicidade <span class="platform-badge badge-app">Apenas app Android</span></h3>
@@ -998,7 +1026,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">Creado: 20 de marzo de 2026　／　Última actualización: 6 de mayo de 2026</p>
+        <p class="meta">Creado: 20 de marzo de 2026　／　Última actualización: 9 de mayo de 2026</p>
       </header>
 
       <section id="es-s1">
@@ -1017,7 +1045,9 @@
             <thead><tr><th>Tipo de Dato</th><th>Recopilación</th><th>Lugar de Almacenamiento</th><th>Plataforma</th></tr></thead>
             <tbody>
               <tr><td>Información personal (nombre, correo, etc.)</td><td>No recopilado</td><td>—</td><td>Todas</td></tr>
-              <tr><td>Ubicación, cámara, micrófono</td><td>No utilizado</td><td>—</td><td>Todas</td></tr>
+              <tr><td>Cámara, micrófono</td><td>No utilizados</td><td>—</td><td>Todas</td></tr>
+              <tr><td>Ubicación GPS</td><td>No utilizada (el lugar de nacimiento se elige en una lista de ciudades dentro de la app)</td><td>—</td><td>Todas</td></tr>
+              <tr><td>Perfil de horóscopo (fecha, hora y lugar de nacimiento)</td><td>Almacenamiento opcional (solo al usar la función de horóscopo)</td><td>DataStore en el dispositivo <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Todas</td></tr>
               <tr><td>Historial de lecturas de tarot</td><td>Guardado localmente</td><td>IndexedDB (navegador) / almacenamiento del dispositivo</td><td>Todas</td></tr>
               <tr><td>Cookies y píxeles de seguimiento</td><td>Utilizados</td><td>Navegador</td><td><span class="platform-badge badge-web">Web</span></td></tr>
               <tr><td>Registros de fallos y estadísticas (Firebase)</td><td>Recopilados automáticamente</td><td>Servidores de Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
@@ -1037,6 +1067,7 @@
         <h2><span class="section-num">04</span>Almacenamiento de Datos</h2>
         <ul>
           <li><strong style="color:var(--text)">IndexedDB (navegador)</strong>: El historial de lecturas se almacena localmente en el navegador y se elimina al borrar los datos del sitio. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (dispositivo)</strong>: Almacena tu perfil de horóscopo (fecha, hora y lugar de nacimiento). Se elimina con el botón "Eliminar perfil" en la app o al desinstalar. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Servidores de Google</strong>: Firebase y AdMob envían registros de fallos e IDs de publicidad. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Servidores de Cloudflare</strong>: Registros de acceso temporales vía CDN (direcciones IP, etc.). <span class="platform-badge badge-web">Web</span></li>
         </ul>
@@ -1058,6 +1089,7 @@
         <ul>
           <li><span class="platform-badge badge-app">App</span>Desinstale la aplicación, o vaya a Configuración Android → Aplicaciones → Tarot Draw → Almacenamiento → Borrar datos para eliminar completamente los datos del dispositivo.</li>
           <li><span class="platform-badge badge-web">Web</span>Utilice las opciones del navegador "Configuración del sitio → Borrar datos" o "Borrar historial de navegación y datos del sitio".</li>
+          <li><span class="platform-badge badge-app">App</span>Tu perfil de horóscopo puede eliminarse en cualquier momento desde la pantalla de fecha de nacimiento mediante el botón "Eliminar perfil".</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. Restablecer el ID de Publicidad <span class="platform-badge badge-app">Solo app Android</span></h3>
@@ -1104,7 +1136,7 @@
           <span class="ornament-diamond"></span>
           <span class="ornament-line right"></span>
         </div>
-        <p class="meta">Créée le : 20 mars 2026　／　Dernière mise à jour : 6 mai 2026</p>
+        <p class="meta">Créée le : 20 mars 2026　／　Dernière mise à jour : 9 mai 2026</p>
       </header>
 
       <section id="fr-s1">
@@ -1123,7 +1155,9 @@
             <thead><tr><th>Type de donnée</th><th>Collecte</th><th>Lieu de stockage</th><th>Plateforme</th></tr></thead>
             <tbody>
               <tr><td>Informations personnelles (nom, e-mail, etc.)</td><td>Non collectées</td><td>—</td><td>Toutes</td></tr>
-              <tr><td>Localisation, caméra, microphone</td><td>Non utilisés</td><td>—</td><td>Toutes</td></tr>
+              <tr><td>Caméra, microphone</td><td>Non utilisés</td><td>—</td><td>Toutes</td></tr>
+              <tr><td>Localisation GPS</td><td>Non utilisée (le lieu de naissance est choisi dans une liste de villes au sein de l'application)</td><td>—</td><td>Toutes</td></tr>
+              <tr><td>Profil d'horoscope (date, heure et lieu de naissance)</td><td>Enregistrement facultatif (uniquement lors de l'utilisation de la fonction horoscope)</td><td>DataStore sur l'appareil <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Toutes</td></tr>
               <tr><td>Historique des tirages de tarot</td><td>Sauvegardé en local</td><td>IndexedDB (navigateur) / stockage de l'appareil</td><td>Toutes</td></tr>
               <tr><td>Cookies et pixels de suivi</td><td>Utilisés</td><td>Navigateur</td><td><span class="platform-badge badge-web">Web</span></td></tr>
               <tr><td>Journaux de plantage et statistiques (Firebase)</td><td>Collecte automatique</td><td>Serveurs Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
@@ -1143,6 +1177,7 @@
         <h2><span class="section-num">04</span>Stockage des données</h2>
         <ul>
           <li><strong style="color:var(--text)">IndexedDB (navigateur)</strong> : L'historique des tirages est stocké localement dans votre navigateur et supprimé lors de l'effacement des données du site. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (appareil)</strong> : Stocke votre profil d'horoscope (date, heure et lieu de naissance). Supprimé via le bouton « Supprimer le profil » dans l'application ou en la désinstallant. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Serveurs Google</strong> : Firebase et AdMob transmettent les journaux de plantage et les identifiants publicitaires. <span class="platform-badge badge-app">App</span></li>
           <li><strong style="color:var(--text)">Serveurs Cloudflare</strong> : Journaux d'accès temporaires via CDN (adresses IP, etc.). <span class="platform-badge badge-web">Web</span></li>
         </ul>
@@ -1164,6 +1199,7 @@
         <ul>
           <li><span class="platform-badge badge-app">App</span>Désinstallez l'application, ou allez dans Paramètres Android → Applications → Tarot Draw → Stockage → Effacer les données pour supprimer complètement les données de l'appareil.</li>
           <li><span class="platform-badge badge-web">Web</span>Utilisez les options du navigateur « Paramètres du site → Effacer les données » ou « Effacer l'historique de navigation et les données de site ».</li>
+          <li><span class="platform-badge badge-app">App</span>Votre profil d'horoscope peut être supprimé à tout moment depuis l'écran de saisie de la date de naissance, via le bouton « Supprimer le profil ».</li>
         </ul>
 
         <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. Réinitialiser l'identifiant publicitaire <span class="platform-badge badge-app">App Android uniquement</span></h3>
