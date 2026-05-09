@@ -187,6 +187,10 @@
       <button class="lang-btn" onclick="setLang('pt')">Português</button>
       <button class="lang-btn" onclick="setLang('es')">Español</button>
       <button class="lang-btn" onclick="setLang('fr')">Français</button>
+      <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
+      <button class="lang-btn" onclick="setLang('it')">Italiano</button>
+      <button class="lang-btn" onclick="setLang('ro')">Română</button>
+      <button class="lang-btn" onclick="setLang('th')">ภาษาไทย</button>
     </div>
 
     <!-- ========== 日本語 ========== -->
@@ -1232,6 +1236,445 @@
         <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
         <p>La version japonaise de cette politique fait foi.</p>
       </footer>
+
+    <!-- ========== Deutsch ========== -->
+    <div data-lang="de">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>Datenschutzrichtlinie</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">Erstellt am: 20. März 2026　／　Zuletzt aktualisiert: 9. Mai 2026</p>
+      </header>
+
+      <section id="de-s1">
+        <h2><span class="section-num">01</span>Übersicht</h2>
+        <p>Diese Datenschutzrichtlinie gilt für alle Versionen von Tarot Draw, einschließlich der iOS-App, der Android-App und der Web-App (tarot-draw.naru2.com).</p>
+        <div class="highlight-box gold">
+          <p class="label">Kurz gesagt</p>
+          <p>Diese App erhebt keine persönlichen Daten wie Name, E-Mail-Adresse oder Standort. Eine Registrierung ist nicht erforderlich.</p>
+        </div>
+      </section>
+
+      <section id="de-s2">
+        <h2><span class="section-num">02</span>Erfasste Daten</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Datentyp</th><th>Erhebung</th><th>Speicherort</th><th>Plattform</th></tr></thead>
+            <tbody>
+              <tr><td>Persönliche Daten (Name, E-Mail usw.)</td><td>Nicht erhoben</td><td>—</td><td>Alle</td></tr>
+              <tr><td>Kamera, Mikrofon</td><td>Nicht verwendet</td><td>—</td><td>Alle</td></tr>
+              <tr><td>GPS-Standort</td><td>Nicht verwendet (Geburtsort wird aus einer In-App-Stadtliste ausgewählt)</td><td>—</td><td>Alle</td></tr>
+              <tr><td>Horoskop-Profil (Geburtsdatum, -zeit, -ort)</td><td>Optionale Eingabe (nur bei Nutzung der Horoskop-Funktion)</td><td>DataStore auf Gerät <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Alle</td></tr>
+              <tr><td>Tarot-Legungs-Verlauf</td><td>Lokal gespeichert</td><td>IndexedDB (Browser) / Gerätespeicher</td><td>Alle</td></tr>
+              <tr><td>Cookies und Tracking-Pixel</td><td>Verwendet</td><td>Browser</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>Absturzberichte und Statistiken (Firebase)</td><td>Automatisch erhoben</td><td>Google-Server</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>Werbe-ID (AdMob)</td><td>Automatisch erhoben</td><td>Google-Server</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="de-s3">
+        <h2><span class="section-num">03</span>Werbung und Affiliate</h2>
+        <p><strong style="color:var(--text)">Web-Version</strong>: Wir schalten Affiliate-Anzeigen über A8.net. Durch Klicken auf eine Anzeige werden Sie über den A8.net-Tracking-Server weitergeleitet. Ein 1×1-Pixel wird zur Klickmessung verwendet. Sollten wir künftig Google AdSense oder andere Drittanbieter-Anzeigen hinzufügen, wird diese Richtlinie aktualisiert.</p>
+        <p><strong style="color:var(--text)">App-Version</strong>: Werbung wird von Google AdMob unter Verwendung der Werbe-ID (IDFA / GAID) ausgespielt.</p>
+      </section>
+
+      <section id="de-s4">
+        <h2><span class="section-num">04</span>Datenspeicherung</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (Browser)</strong>: Der Legungs-Verlauf wird lokal in Ihrem Browser gespeichert und beim Löschen der Website-Daten entfernt. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (Gerät)</strong>: Speichert Ihr Horoskop-Profil (Geburtsdatum, -zeit und -ort). Löschen über die Schaltfläche „Profil löschen" in der App oder durch Deinstallation. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Google-Server</strong>: Firebase und AdMob übertragen Absturzberichte und Werbe-IDs. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Cloudflare-Server</strong>: Temporäre Zugriffsprotokolle über CDN (IP-Adressen usw.). <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="de-s5">
+        <h2><span class="section-num">05</span>Haftungsausschluss</h2>
+        <div class="highlight-box">
+          <p class="label">Wichtig</p>
+          <p>Tarot-Legungen dienen ausschließlich der Unterhaltung und persönlichen Reflexion. Verwenden Sie sie nicht als Grundlage für medizinische, rechtliche, finanzielle oder andere wichtige Lebensentscheidungen.</p>
+        </div>
+      </section>
+
+      <section id="de-s6">
+        <h2><span class="section-num">06</span>Kontakt und Datenlöschung</h2>
+        <p>Für Anfragen zur Löschung von durch diese App erfassten oder übermittelten Daten oder für allgemeine Fragen, Fehlerberichte oder Feature-Wünsche nutzen Sie bitte das folgende Formular.</p>
+
+        <h3 style="margin-top:24px;color:var(--gold);font-size:15px;">1. Lokale Gerätedaten löschen</h3>
+        <ul>
+          <li><span class="platform-badge badge-app">App</span>Deinstallieren Sie die App, oder gehen Sie zu Android-Einstellungen → Apps → Tarot Draw → Speicher → Daten löschen, um alle Gerätedaten vollständig zu entfernen.</li>
+          <li><span class="platform-badge badge-web">Web</span>Nutzen Sie im Browser „Website-Einstellungen → Daten löschen" oder „Browserverlauf und Website-Daten löschen".</li>
+          <li><span class="platform-badge badge-app">App</span>Ihr Horoskop-Profil kann jederzeit über die Schaltfläche „Profil löschen" auf dem Geburtsdatum-Eingabebildschirm entfernt werden.</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. Werbe-ID zurücksetzen <span class="platform-badge badge-app">Nur Android-App</span></h3>
+        <ul>
+          <li>Gehen Sie zu Android-Einstellungen → Google → Anzeigen und wählen Sie „Werbe-ID zurücksetzen" oder „Werbe-ID löschen".</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">3. Löschung von auf Google-Servern gespeicherten Daten anfragen</h3>
+        <p>Um die Löschung von durch Firebase Crashlytics oder Google AdMob auf Google-Servern gespeicherten Daten anzufragen, kontaktieren Sie uns bitte über das folgende Formular.</p>
+
+        <div class="highlight-box gold" style="margin-top:16px;">
+          <p class="label">Kontaktformular / Datenlöschungsanfrage</p>
+          <p style="margin-top:8px;">
+            <a href="https://forms.gle/R3msYE5Qu7Uuida38"
+               target="_blank" rel="noopener noreferrer"
+               style="color:var(--gold);text-decoration:underline;word-break:break-all;">
+              https://forms.gle/R3msYE5Qu7Uuida38
+            </a>
+          </p>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-sub);">
+            Wählen Sie den Betreff Ihrer Anfrage. Datenlöschungsanfragen können einige Tage bis Wochen dauern.
+          </p>
+        </div>
+
+        <p style="margin-top:16px;font-size:13px;color:var(--text-sub);">Da diese App keine persönlich identifizierbaren Informationen erhebt, ist die Löschung benutzerspezifischer Daten technisch möglicherweise nicht möglich. Wir werden nach bestem Vermögen reagieren.</p>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>Die japanische Version dieser Richtlinie ist maßgeblich.</p>
+      </footer>
+    </div>
+
+    <!-- ========== Italiano ========== -->
+    <div data-lang="it">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>Informativa sulla Privacy</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">Creata il: 20 marzo 2026　／　Ultimo aggiornamento: 9 maggio 2026</p>
+      </header>
+
+      <section id="it-s1">
+        <h2><span class="section-num">01</span>Panoramica</h2>
+        <p>Questa informativa sulla privacy si applica a tutte le versioni di Tarot Draw, inclusa l'app iOS, l'app Android e l'app Web (tarot-draw.naru2.com).</p>
+        <div class="highlight-box gold">
+          <p class="label">In breve</p>
+          <p>Questa app non raccoglie informazioni personali come nome, indirizzo e-mail o posizione. Non è richiesta alcuna registrazione.</p>
+        </div>
+      </section>
+
+      <section id="it-s2">
+        <h2><span class="section-num">02</span>Informazioni Raccolte</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Tipo di dato</th><th>Raccolta</th><th>Luogo di archiviazione</th><th>Piattaforma</th></tr></thead>
+            <tbody>
+              <tr><td>Informazioni personali (nome, e-mail, ecc.)</td><td>Non raccolte</td><td>—</td><td>Tutte</td></tr>
+              <tr><td>Fotocamera, microfono</td><td>Non utilizzati</td><td>—</td><td>Tutte</td></tr>
+              <tr><td>Posizione GPS</td><td>Non utilizzata (il luogo di nascita viene selezionato da un elenco di città nell'app)</td><td>—</td><td>Tutte</td></tr>
+              <tr><td>Profilo oroscopo (data, ora e luogo di nascita)</td><td>Inserimento opzionale (solo quando si usa la funzione oroscopo)</td><td>DataStore sul dispositivo <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Tutte</td></tr>
+              <tr><td>Cronologia letture tarocchi</td><td>Salvata localmente</td><td>IndexedDB (browser) / memoria dispositivo</td><td>Tutte</td></tr>
+              <tr><td>Cookie e pixel di tracciamento</td><td>Utilizzati</td><td>Browser</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>Report di crash e statistiche (Firebase)</td><td>Raccolta automatica</td><td>Server Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>ID pubblicitario (AdMob)</td><td>Raccolta automatica</td><td>Server Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="it-s3">
+        <h2><span class="section-num">03</span>Pubblicità e Affiliazione</h2>
+        <p><strong style="color:var(--text)">Versione Web</strong>: Visualizziamo annunci affiliati tramite A8.net. Cliccando su un annuncio, si viene reindirizzati tramite il server di tracciamento di A8.net. Un pixel 1×1 viene utilizzato per misurare i clic. Se in futuro aggiungiamo Google AdSense o altri annunci di terze parti, questa informativa verrà aggiornata.</p>
+        <p><strong style="color:var(--text)">Versione App</strong>: Gli annunci sono erogati da Google AdMob utilizzando l'ID pubblicitario (IDFA / GAID).</p>
+      </section>
+
+      <section id="it-s4">
+        <h2><span class="section-num">04</span>Conservazione dei Dati</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (browser)</strong>: La cronologia delle letture è archiviata localmente nel browser e viene eliminata alla cancellazione dei dati del sito. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (dispositivo)</strong>: Memorizza il profilo oroscopo (data, ora e luogo di nascita). Si elimina tramite il pulsante "Elimina profilo" nell'app o disinstallando l'app. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Server Google</strong>: Firebase e AdMob trasmettono report di crash e ID pubblicitari. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Server Cloudflare</strong>: Log di accesso temporanei tramite CDN (indirizzi IP, ecc.). <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="it-s5">
+        <h2><span class="section-num">05</span>Esclusione di Responsabilità</h2>
+        <div class="highlight-box">
+          <p class="label">Importante</p>
+          <p>Le letture dei tarocchi sono destinate esclusivamente all'intrattenimento e alla riflessione personale. Non utilizzarle come base per decisioni mediche, legali, finanziarie o altre decisioni importanti nella vita.</p>
+        </div>
+      </section>
+
+      <section id="it-s6">
+        <h2><span class="section-num">06</span>Contatto e Richiesta di Eliminazione Dati</h2>
+        <p>Per richiedere l'eliminazione dei dati raccolti o trasmessi da questa app, o per domande generali, segnalazioni di bug o richieste di funzionalità, utilizzare il modulo seguente.</p>
+
+        <h3 style="margin-top:24px;color:var(--gold);font-size:15px;">1. Eliminare i dati locali del dispositivo</h3>
+        <ul>
+          <li><span class="platform-badge badge-app">App</span>Disinstallare l'app, oppure andare in Impostazioni Android → App → Tarot Draw → Memoria → Cancella dati per eliminare completamente i dati del dispositivo.</li>
+          <li><span class="platform-badge badge-web">Web</span>Utilizzare le opzioni del browser "Impostazioni sito → Cancella dati" o "Cancella cronologia e dati dei siti".</li>
+          <li><span class="platform-badge badge-app">App</span>Il profilo oroscopo può essere eliminato in qualsiasi momento dalla schermata di inserimento della data di nascita tramite il pulsante "Elimina profilo".</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. Reimpostare l'ID pubblicitario <span class="platform-badge badge-app">Solo app Android</span></h3>
+        <ul>
+          <li>Andare in Impostazioni Android → Google → Annunci e selezionare "Reimposta ID pubblicità" o "Elimina ID pubblicità".</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">3. Richiedere l'eliminazione dei dati sui server Google</h3>
+        <p>Per richiedere l'eliminazione dei dati archiviati sui server Google da Firebase Crashlytics o Google AdMob, contattarci tramite il modulo seguente.</p>
+
+        <div class="highlight-box gold" style="margin-top:16px;">
+          <p class="label">Modulo di contatto / richiesta di eliminazione dati</p>
+          <p style="margin-top:8px;">
+            <a href="https://forms.gle/R3msYE5Qu7Uuida38"
+               target="_blank" rel="noopener noreferrer"
+               style="color:var(--gold);text-decoration:underline;word-break:break-all;">
+              https://forms.gle/R3msYE5Qu7Uuida38
+            </a>
+          </p>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-sub);">
+            Selezionare l'oggetto della richiesta. Le richieste di eliminazione dati possono richiedere da alcuni giorni a settimane.
+          </p>
+        </div>
+
+        <p style="margin-top:16px;font-size:13px;color:var(--text-sub);">Poiché questa app non raccoglie informazioni personalmente identificabili, l'eliminazione di dati specifici dell'utente potrebbe non essere tecnicamente possibile. Risponderemo nei limiti del possibile.</p>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>La versione giapponese di questa informativa fa fede.</p>
+      </footer>
+    </div>
+
+    <!-- ========== Română ========== -->
+    <div data-lang="ro">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>Politica de Confidențialitate</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">Creată la: 20 martie 2026　／　Ultima actualizare: 9 mai 2026</p>
+      </header>
+
+      <section id="ro-s1">
+        <h2><span class="section-num">01</span>Prezentare</h2>
+        <p>Această politică de confidențialitate se aplică tuturor versiunilor Tarot Draw, inclusiv aplicației iOS, aplicației Android și aplicației Web (tarot-draw.naru2.com).</p>
+        <div class="highlight-box gold">
+          <p class="label">Pe scurt</p>
+          <p>Această aplicație nu colectează informații personale precum numele, adresa de e-mail sau locația. Nu este necesară înregistrarea.</p>
+        </div>
+      </section>
+
+      <section id="ro-s2">
+        <h2><span class="section-num">02</span>Informații Colectate</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Tip de date</th><th>Colectare</th><th>Locație stocare</th><th>Platformă</th></tr></thead>
+            <tbody>
+              <tr><td>Informații personale (nume, e-mail etc.)</td><td>Necolectate</td><td>—</td><td>Toate</td></tr>
+              <tr><td>Cameră foto, microfon</td><td>Neutilizate</td><td>—</td><td>Toate</td></tr>
+              <tr><td>Locație GPS</td><td>Neutilizată (locul nașterii se selectează dintr-o listă de orașe din aplicație)</td><td>—</td><td>Toate</td></tr>
+              <tr><td>Profil horoscop (data, ora și locul nașterii)</td><td>Introducere opțională (doar la utilizarea funcției horoscop)</td><td>DataStore pe dispozitiv <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Toate</td></tr>
+              <tr><td>Istoricul tirajelor de tarot</td><td>Salvat local</td><td>IndexedDB (browser) / stocare dispozitiv</td><td>Toate</td></tr>
+              <tr><td>Cookie-uri și pixeli de urmărire</td><td>Utilizați</td><td>Browser</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>Rapoarte de erori și statistici (Firebase)</td><td>Colectare automată</td><td>Servere Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>ID publicitar (AdMob)</td><td>Colectare automată</td><td>Servere Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="ro-s3">
+        <h2><span class="section-num">03</span>Publicitate și Afiliere</h2>
+        <p><strong style="color:var(--text)">Versiunea Web</strong>: Afișăm reclame afiliate prin A8.net. Prin clic pe o reclamă, sunteți redirecționat prin serverul de urmărire al A8.net. Un pixel 1×1 este utilizat pentru măsurarea clicurilor. Dacă în viitor adăugăm Google AdSense sau alte reclame terțe, această politică va fi actualizată.</p>
+        <p><strong style="color:var(--text)">Versiunea App</strong>: Reclamele sunt difuzate de Google AdMob utilizând ID-ul publicitar (IDFA / GAID).</p>
+      </section>
+
+      <section id="ro-s4">
+        <h2><span class="section-num">04</span>Păstrarea Datelor</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (browser)</strong>: Istoricul tirajelor este stocat local în browser și șters la ștergerea datelor site-ului. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (dispozitiv)</strong>: Stochează profilul de horoscop (data, ora și locul nașterii). Ștergeți prin butonul „Șterge profilul" din aplicație sau dezinstalând aplicația. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Servere Google</strong>: Firebase și AdMob transmit rapoarte de erori și ID-uri publicitare. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Servere Cloudflare</strong>: Jurnale de acces temporare prin CDN (adrese IP etc.). <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="ro-s5">
+        <h2><span class="section-num">05</span>Declinare a Responsabilității</h2>
+        <div class="highlight-box">
+          <p class="label">Important</p>
+          <p>Tirajele de tarot sunt destinate exclusiv divertismentului și reflecției personale. Nu le utilizați ca bază pentru decizii medicale, juridice, financiare sau alte decizii importante în viață.</p>
+        </div>
+      </section>
+
+      <section id="ro-s6">
+        <h2><span class="section-num">06</span>Contact și Ștergere Date</h2>
+        <p>Pentru a solicita ștergerea datelor colectate sau transmise de această aplicație, sau pentru întrebări generale, rapoarte de erori sau solicitări de funcționalități, utilizați formularul de mai jos.</p>
+
+        <h3 style="margin-top:24px;color:var(--gold);font-size:15px;">1. Ștergerea datelor locale de pe dispozitiv</h3>
+        <ul>
+          <li><span class="platform-badge badge-app">App</span>Dezinstalați aplicația sau accesați Setări Android → Aplicații → Tarot Draw → Stocare → Șterge datele pentru a elimina complet datele de pe dispozitiv.</li>
+          <li><span class="platform-badge badge-web">Web</span>Utilizați opțiunile browserului „Setări site → Șterge datele" sau „Șterge istoricul și datele de navigare".</li>
+          <li><span class="platform-badge badge-app">App</span>Profilul de horoscop poate fi șters oricând de pe ecranul de introducere a datei nașterii prin butonul „Șterge profilul".</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. Resetarea ID-ului publicitar <span class="platform-badge badge-app">Doar app Android</span></h3>
+        <ul>
+          <li>Accesați Setări Android → Google → Anunțuri și selectați „Resetează ID-ul publicitar" sau „Șterge ID-ul publicitar".</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">3. Solicitarea ștergerii datelor stocate pe serverele Google</h3>
+        <p>Pentru a solicita ștergerea datelor stocate pe serverele Google de Firebase Crashlytics sau Google AdMob, contactați-ne prin formularul de mai jos.</p>
+
+        <div class="highlight-box gold" style="margin-top:16px;">
+          <p class="label">Formular de contact / solicitare de ștergere date</p>
+          <p style="margin-top:8px;">
+            <a href="https://forms.gle/R3msYE5Qu7Uuida38"
+               target="_blank" rel="noopener noreferrer"
+               style="color:var(--gold);text-decoration:underline;word-break:break-all;">
+              https://forms.gle/R3msYE5Qu7Uuida38
+            </a>
+          </p>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-sub);">
+            Selectați subiectul solicitării. Cererile de ștergere a datelor pot dura de la câteva zile la câteva săptămâni.
+          </p>
+        </div>
+
+        <p style="margin-top:16px;font-size:13px;color:var(--text-sub);">Deoarece această aplicație nu colectează informații de identificare personală, ștergerea datelor specifice utilizatorului poate să nu fie tehnic posibilă. Vom răspunde în măsura posibilului.</p>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>Versiunea japoneză a acestei politici este cea autentică.</p>
+      </footer>
+    </div>
+
+    <!-- ========== ภาษาไทย ========== -->
+    <div data-lang="th">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>นโยบายความเป็นส่วนตัว</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">สร้างเมื่อ: 20 มีนาคม 2026　／　อัปเดตล่าสุด: 9 พฤษภาคม 2026</p>
+      </header>
+
+      <section id="th-s1">
+        <h2><span class="section-num">01</span>ภาพรวม</h2>
+        <p>นโยบายความเป็นส่วนตัวนี้ใช้กับ Tarot Draw ทุกเวอร์ชัน รวมถึงแอป iOS แอป Android และแอปเว็บ (tarot-draw.naru2.com)</p>
+        <div class="highlight-box gold">
+          <p class="label">โดยสรุป</p>
+          <p>แอปนี้ไม่รวบรวมข้อมูลส่วนตัว เช่น ชื่อ อีเมล หรือตำแหน่งที่ตั้ง ไม่จำเป็นต้องลงทะเบียน</p>
+        </div>
+      </section>
+
+      <section id="th-s2">
+        <h2><span class="section-num">02</span>ข้อมูลที่รวบรวม</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ประเภทข้อมูล</th><th>การรวบรวม</th><th>สถานที่จัดเก็บ</th><th>แพลตฟอร์ม</th></tr></thead>
+            <tbody>
+              <tr><td>ข้อมูลส่วนตัว (ชื่อ อีเมล ฯลฯ)</td><td>ไม่รวบรวม</td><td>—</td><td>ทั้งหมด</td></tr>
+              <tr><td>กล้อง ไมโครโฟน</td><td>ไม่ใช้</td><td>—</td><td>ทั้งหมด</td></tr>
+              <tr><td>ตำแหน่ง GPS</td><td>ไม่ใช้ (สถานที่เกิดเลือกจากรายการเมืองในแอป)</td><td>—</td><td>ทั้งหมด</td></tr>
+              <tr><td>โปรไฟล์ดวงชะตา (วัน เวลา สถานที่เกิด)</td><td>กรอกเองได้ (เฉพาะเมื่อใช้ฟีเจอร์ดวงชะตา)</td><td>DataStore บนอุปกรณ์ <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>ทั้งหมด</td></tr>
+              <tr><td>ประวัติการจั่วไพ่ทาโรต์</td><td>บันทึกในเครื่อง</td><td>IndexedDB (เบราว์เซอร์) / พื้นที่เก็บข้อมูลอุปกรณ์</td><td>ทั้งหมด</td></tr>
+              <tr><td>คุกกี้และพิกเซลติดตาม</td><td>ใช้</td><td>เบราว์เซอร์</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>รายงานข้อผิดพลาดและสถิติ (Firebase)</td><td>รวบรวมอัตโนมัติ</td><td>เซิร์ฟเวอร์ Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>ID โฆษณา (AdMob)</td><td>รวบรวมอัตโนมัติ</td><td>เซิร์ฟเวอร์ Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="th-s3">
+        <h2><span class="section-num">03</span>โฆษณาและพันธมิตร</h2>
+        <p><strong style="color:var(--text)">เวอร์ชันเว็บ</strong>: เราแสดงโฆษณาพันธมิตรผ่าน A8.net การคลิกโฆษณาจะเปลี่ยนเส้นทางผ่านเซิร์ฟเวอร์ติดตามของ A8.net และใช้พิกเซล 1×1 เพื่อวัดการคลิก หากเราเพิ่ม Google AdSense หรือโฆษณาจากบุคคลที่สามในอนาคต นโยบายนี้จะได้รับการอัปเดต</p>
+        <p><strong style="color:var(--text)">เวอร์ชัน App</strong>: โฆษณาแสดงโดย Google AdMob โดยใช้ ID โฆษณา (IDFA / GAID)</p>
+      </section>
+
+      <section id="th-s4">
+        <h2><span class="section-num">04</span>การเก็บรักษาข้อมูล</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (เบราว์เซอร์)</strong>: ประวัติการจั่วจะถูกเก็บไว้ในเบราว์เซอร์และถูกลบเมื่อล้างข้อมูลไซต์ <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (อุปกรณ์)</strong>: จัดเก็บโปรไฟล์ดวงชะตา (วัน เวลา สถานที่เกิด) ลบได้ผ่านปุ่ม "ลบโปรไฟล์" ในแอป หรือโดยการถอนการติดตั้ง <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">เซิร์ฟเวอร์ Google</strong>: Firebase และ AdMob ส่งรายงานข้อผิดพลาดและ ID โฆษณา <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">เซิร์ฟเวอร์ Cloudflare</strong>: บันทึกการเข้าถึงชั่วคราวผ่าน CDN (IP ฯลฯ) <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="th-s5">
+        <h2><span class="section-num">05</span>ข้อจำกัดความรับผิดชอบ</h2>
+        <div class="highlight-box">
+          <p class="label">สำคัญ</p>
+          <p>การอ่านไพ่ทาโรต์มีไว้เพื่อความบันเทิงและการไตร่ตรองส่วนตัวเท่านั้น อย่านำไปใช้เป็นพื้นฐานสำหรับการตัดสินใจทางการแพทย์ กฎหมาย การเงิน หรือการตัดสินใจสำคัญในชีวิต</p>
+        </div>
+      </section>
+
+      <section id="th-s6">
+        <h2><span class="section-num">06</span>การติดต่อและการลบข้อมูล</h2>
+        <p>หากต้องการขอลบข้อมูลที่รวบรวมหรือส่งโดยแอปนี้ หรือสำหรับคำถามทั่วไป รายงานข้อบกพร่อง หรือคำขอฟีเจอร์ โปรดใช้แบบฟอร์มด้านล่าง</p>
+
+        <h3 style="margin-top:24px;color:var(--gold);font-size:15px;">1. ลบข้อมูลในเครื่องของคุณ</h3>
+        <ul>
+          <li><span class="platform-badge badge-app">App</span>ถอนการติดตั้งแอป หรือไปที่ การตั้งค่า Android → แอป → Tarot Draw → พื้นที่เก็บข้อมูล → ล้างข้อมูล เพื่อลบข้อมูลทั้งหมดในอุปกรณ์</li>
+          <li><span class="platform-badge badge-web">Web</span>ใช้ตัวเลือกเบราว์เซอร์ "การตั้งค่าไซต์ → ล้างข้อมูล" หรือ "ล้างประวัติและข้อมูลการท่องเว็บ"</li>
+          <li><span class="platform-badge badge-app">App</span>โปรไฟล์ดวงชะตาสามารถลบได้ตลอดเวลาจากหน้าจอกรอกวันเกิดผ่านปุ่ม "ลบโปรไฟล์"</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">2. รีเซ็ต ID โฆษณา <span class="platform-badge badge-app">เฉพาะ Android App</span></h3>
+        <ul>
+          <li>ไปที่ การตั้งค่า Android → Google → โฆษณา และเลือก "รีเซ็ต ID โฆษณา" หรือ "ลบ ID โฆษณา"</li>
+        </ul>
+
+        <h3 style="margin-top:20px;color:var(--gold);font-size:15px;">3. ขอลบข้อมูลที่จัดเก็บบนเซิร์ฟเวอร์ Google</h3>
+        <p>หากต้องการขอลบข้อมูลที่จัดเก็บบนเซิร์ฟเวอร์ Google โดย Firebase Crashlytics หรือ Google AdMob โปรดติดต่อเราผ่านแบบฟอร์มด้านล่าง</p>
+
+        <div class="highlight-box gold" style="margin-top:16px;">
+          <p class="label">แบบฟอร์มติดต่อ / ขอลบข้อมูล</p>
+          <p style="margin-top:8px;">
+            <a href="https://forms.gle/R3msYE5Qu7Uuida38"
+               target="_blank" rel="noopener noreferrer"
+               style="color:var(--gold);text-decoration:underline;word-break:break-all;">
+              https://forms.gle/R3msYE5Qu7Uuida38
+            </a>
+          </p>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-sub);">
+            เลือกหัวข้อของคำขอ คำขอลบข้อมูลอาจใช้เวลาหลายวันถึงหลายสัปดาห์
+          </p>
+        </div>
+
+        <p style="margin-top:16px;font-size:13px;color:var(--text-sub);">เนื่องจากแอปนี้ไม่รวบรวมข้อมูลที่สามารถระบุตัวบุคคลได้ การลบข้อมูลเฉพาะผู้ใช้อาจไม่สามารถทำได้ในทางเทคนิค เราจะตอบสนองเท่าที่เป็นไปได้</p>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>เวอร์ชันภาษาญี่ปุ่นของนโยบายนี้ถือเป็นฉบับที่ถูกต้อง</p>
+      </footer>
     </div>
 
   </div>
@@ -1249,7 +1692,7 @@
     }
 
     function langLabel(lang) {
-      return { ja: '日本語', en: 'English', 'zh-CN': '简体中文', 'zh-TW': '繁體中文', ko: '한국어', pt: 'Português', es: 'Español', fr: 'Français' }[lang] || '日本語';
+      return { ja: '日本語', en: 'English', 'zh-CN': '简体中文', 'zh-TW': '繁體中文', ko: '한국어', pt: 'Português', es: 'Español', fr: 'Français', de: 'Deutsch', it: 'Italiano', ro: 'Română', th: 'ภาษาไทย' }[lang] || '日本語';
     }
 
     function detectLang() {
@@ -1263,6 +1706,10 @@
       if (hash.startsWith('#pt-')) return 'pt';
       if (hash.startsWith('#es-')) return 'es';
       if (hash.startsWith('#fr-')) return 'fr';
+      if (hash.startsWith('#de-')) return 'de';
+      if (hash.startsWith('#it-')) return 'it';
+      if (hash.startsWith('#ro-')) return 'ro';
+      if (hash.startsWith('#th-')) return 'th';
       try {
         var saved = localStorage.getItem('pp-lang');
         if (saved) return saved;
@@ -1274,6 +1721,10 @@
       if (nav.startsWith('pt')) return 'pt';
       if (nav.startsWith('es')) return 'es';
       if (nav.startsWith('fr')) return 'fr';
+      if (nav.startsWith('de')) return 'de';
+      if (nav.startsWith('it')) return 'it';
+      if (nav.startsWith('ro')) return 'ro';
+      if (nav.startsWith('th')) return 'th';
       if (nav.startsWith('en')) return 'en';
       return 'ja';
     }
