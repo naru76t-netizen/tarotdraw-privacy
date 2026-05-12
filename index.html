@@ -191,6 +191,9 @@
       <button class="lang-btn" onclick="setLang('it')">Italiano</button>
       <button class="lang-btn" onclick="setLang('ro')">Română</button>
       <button class="lang-btn" onclick="setLang('th')">ภาษาไทย</button>
+      <button class="lang-btn" onclick="setLang('hi')">हिन्दी</button>
+      <button class="lang-btn" onclick="setLang('pl')">Polski</button>
+      <button class="lang-btn" onclick="setLang('fil')">Filipino</button>
     </div>
 
     <!-- ========== 日本語 ========== -->
@@ -1678,6 +1681,270 @@
       </footer>
     </div>
 
+    <!-- ========== हिन्दी ========== -->
+    <div data-lang="hi">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>गोपनीयता नीति</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">निर्मित: 20 मार्च 2026　／　अंतिम अपडेट: 12 मई 2026</p>
+      </header>
+
+      <section id="hi-s1">
+        <h2><span class="section-num">01</span>अवलोकन</h2>
+        <p>यह गोपनीयता नीति Tarot Draw के सभी संस्करणों पर लागू होती है, जिसमें iOS ऐप, Android ऐप और वेब ऐप (tarot-draw.naru2.com) शामिल हैं।</p>
+        <div class="highlight-box gold">
+          <p class="label">संक्षेप में</p>
+          <p>यह ऐप नाम, ईमेल या स्थान जैसी व्यक्तिगत जानकारी एकत्र नहीं करता। पंजीकरण की आवश्यकता नहीं है।</p>
+        </div>
+      </section>
+
+      <section id="hi-s2">
+        <h2><span class="section-num">02</span>एकत्र किया गया डेटा</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>डेटा का प्रकार</th><th>संग्रह</th><th>भंडारण स्थान</th><th>प्लेटफ़ॉर्म</th></tr></thead>
+            <tbody>
+              <tr><td>व्यक्तिगत जानकारी (नाम, ईमेल आदि)</td><td>एकत्र नहीं किया जाता</td><td>—</td><td>सभी</td></tr>
+              <tr><td>कैमरा, माइक्रोफ़ोन</td><td>उपयोग नहीं होता</td><td>—</td><td>सभी</td></tr>
+              <tr><td>GPS स्थान</td><td>उपयोग नहीं होता (जन्म स्थान ऐप की सूची से चुना जाता है)</td><td>—</td><td>सभी</td></tr>
+              <tr><td>कुंडली प्रोफ़ाइल (जन्म तिथि, समय, स्थान)</td><td>वैकल्पिक रूप से दर्ज किया जाता है</td><td>DataStore <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>सभी</td></tr>
+              <tr><td>टैरो कार्ड पढ़ने का इतिहास</td><td>स्थानीय रूप से सहेजा जाता है</td><td>IndexedDB (ब्राउज़र) / डिवाइस स्टोरेज</td><td>सभी</td></tr>
+              <tr><td>कुकीज़ और ट्रैकिंग पिक्सेल</td><td>उपयोग होता है</td><td>ब्राउज़र</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>त्रुटि रिपोर्ट और आंकड़े (Firebase)</td><td>स्वचालित रूप से एकत्र</td><td>Google सर्वर</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>विज्ञापन ID (AdMob)</td><td>स्वचालित रूप से एकत्र</td><td>Google सर्वर</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="hi-s3">
+        <h2><span class="section-num">03</span>विज्ञापन और भागीदार</h2>
+        <p><strong style="color:var(--text)">वेब संस्करण</strong>: हम A8.net के माध्यम से सहयोगी विज्ञापन प्रदर्शित करते हैं। विज्ञापन पर क्लिक करने पर A8.net के ट्रैकिंग सर्वर के माध्यम से पुनर्निर्देशन होता है और क्लिक मापने के लिए 1×1 पिक्सेल का उपयोग किया जाता है।</p>
+        <p><strong style="color:var(--text)">ऐप संस्करण</strong>: Google AdMob विज्ञापन ID (IDFA / GAID) का उपयोग करके विज्ञापन प्रदर्शित करता है।</p>
+      </section>
+
+      <section id="hi-s4">
+        <h2><span class="section-num">04</span>डेटा प्रतिधारण</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (ब्राउज़र)</strong>: पढ़ने का इतिहास ब्राउज़र में संग्रहीत है और साइट डेटा साफ़ करने पर हट जाता है। <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (डिवाइस)</strong>: कुंडली प्रोफ़ाइल (जन्म तिथि, समय, स्थान) संग्रहीत करता है। <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Google सर्वर</strong>: Firebase और AdMob त्रुटि रिपोर्ट और विज्ञापन ID भेजते हैं। <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Cloudflare सर्वर</strong>: CDN के माध्यम से अस्थायी एक्सेस लॉग (IP आदि) रिकॉर्ड होते हैं। <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="hi-s5">
+        <h2><span class="section-num">05</span>अस्वीकरण</h2>
+        <div class="highlight-box">
+          <p class="label">महत्वपूर्ण</p>
+          <p>टैरो कार्ड रीडिंग केवल मनोरंजन और व्यक्तिगत चिंतन के लिए है। इसे चिकित्सा, कानूनी, वित्तीय या अन्य महत्वपूर्ण जीवन निर्णयों का आधार न बनाएं।</p>
+        </div>
+      </section>
+
+      <section id="hi-s6">
+        <h2><span class="section-num">06</span>संपर्क और डेटा हटाना</h2>
+        <p>इस ऐप द्वारा एकत्र या प्रेषित डेटा को हटाने का अनुरोध करने के लिए, कृपया नीचे दिए गए फ़ॉर्म का उपयोग करें।</p>
+        <div class="highlight-box gold" style="margin-top:16px;">
+          <p class="label">संपर्क / डेटा हटाने का फ़ॉर्म</p>
+          <p style="margin-top:8px;">
+            <a href="https://forms.gle/R3msYE5Qu7Uuida38" target="_blank" rel="noopener noreferrer"
+               style="color:var(--gold);text-decoration:underline;word-break:break-all;">
+              https://forms.gle/R3msYE5Qu7Uuida38
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>इस नीति का जापानी संस्करण आधिकारिक माना जाएगा।</p>
+      </footer>
+    </div>
+
+    <!-- ========== Polski ========== -->
+    <div data-lang="pl">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>Polityka Prywatności</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">Data założenia: 20 marca 2026　／　Ostatnia aktualizacja: 12 maja 2026</p>
+      </header>
+
+      <section id="pl-s1">
+        <h2><span class="section-num">01</span>Wprowadzenie</h2>
+        <p>Niniejsza Polityka Prywatności obowiązuje wszystkie wersje Tarot Draw, w tym aplikację iOS, aplikację Android oraz aplikację internetową (tarot-draw.naru2.com).</p>
+        <div class="highlight-box gold">
+          <p class="label">Podsumowanie</p>
+          <p>Ta aplikacja nie zbiera danych osobowych, takich jak imię, adres e-mail czy lokalizacja. Rejestracja nie jest wymagana.</p>
+        </div>
+      </section>
+
+      <section id="pl-s2">
+        <h2><span class="section-num">02</span>Zbierane dane</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rodzaj danych</th><th>Zbieranie</th><th>Miejsce przechowywania</th><th>Platforma</th></tr></thead>
+            <tbody>
+              <tr><td>Dane osobowe (imię, e-mail itp.)</td><td>Nie zbieramy</td><td>—</td><td>Wszystkie</td></tr>
+              <tr><td>Aparat, mikrofon</td><td>Nie używamy</td><td>—</td><td>Wszystkie</td></tr>
+              <tr><td>Lokalizacja GPS</td><td>Nie używamy (miejsce urodzenia wybierane z listy w aplikacji)</td><td>—</td><td>Wszystkie</td></tr>
+              <tr><td>Profil horoskopowy (data, godzina, miejsce urodzenia)</td><td>Opcjonalnie zapisywany</td><td>DataStore <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Wszystkie</td></tr>
+              <tr><td>Historia odczytów tarota</td><td>Zapisywana lokalnie</td><td>IndexedDB (przeglądarka) / pamięć urządzenia</td><td>Wszystkie</td></tr>
+              <tr><td>Pliki cookie i piksele śledzące</td><td>Używane</td><td>Przeglądarka</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>Raporty o błędach i statystyki (Firebase)</td><td>Zbierane automatycznie</td><td>Serwery Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>Identyfikator reklamowy (AdMob)</td><td>Zbierany automatycznie</td><td>Serwery Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="pl-s3">
+        <h2><span class="section-num">03</span>Reklamy i partnerzy</h2>
+        <p><strong style="color:var(--text)">Wersja internetowa</strong>: Wyświetlamy reklamy afiliacyjne za pośrednictwem A8.net. Kliknięcie reklamy przekierowuje przez serwer śledzący A8.net, a do pomiaru kliknięć używany jest piksel 1×1.</p>
+        <p><strong style="color:var(--text)">Aplikacje mobilne (iOS i Android)</strong>: Reklamy są wyświetlane przez Google AdMob przy użyciu identyfikatora reklamowego (IDFA / GAID).</p>
+      </section>
+
+      <section id="pl-s4">
+        <h2><span class="section-num">04</span>Przechowywanie danych</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (przeglądarka)</strong>: Historia odczytów przechowywana lokalnie. Usuwana po wyczyszczeniu danych witryny. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (urządzenie)</strong>: Profil horoskopowy. Można usunąć przyciskiem „Usuń profil" lub odinstalowując aplikację. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Serwery Google</strong>: Firebase i AdMob przesyłają raporty o błędach i identyfikatory reklamowe. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Serwery Cloudflare</strong>: Tymczasowe logi dostępu przez CDN. <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="pl-s5">
+        <h2><span class="section-num">05</span>Zastrzeżenie</h2>
+        <div class="highlight-box">
+          <p class="label">Ważne</p>
+          <p>Odczyty kart tarota służą wyłącznie rozrywce i osobistej refleksji. Nie używaj ich jako podstawy do podejmowania decyzji medycznych, prawnych, finansowych ani innych ważnych życiowych.</p>
+        </div>
+      </section>
+
+      <section id="pl-s6">
+        <h2><span class="section-num">06</span>Kontakt i usuwanie danych</h2>
+        <p>W celu złożenia wniosku o usunięcie danych lub w przypadku ogólnych zapytań, skorzystaj z formularza poniżej.</p>
+        <div class="highlight-box gold" style="margin-top:16px;">
+          <p class="label">Formularz kontaktowy / wniosek o usunięcie danych</p>
+          <p style="margin-top:8px;">
+            <a href="https://forms.gle/R3msYE5Qu7Uuida38" target="_blank" rel="noopener noreferrer"
+               style="color:var(--gold);text-decoration:underline;word-break:break-all;">
+              https://forms.gle/R3msYE5Qu7Uuida38
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>Japońska wersja tej polityki jest wersją autorytatywną.</p>
+      </footer>
+    </div>
+
+    <!-- ========== Filipino ========== -->
+    <div data-lang="fil">
+      <header>
+        <p class="app-name">Tarot Draw</p>
+        <h1>Patakaran sa Privacy</h1>
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-diamond" style="opacity:1;background:var(--gold);width:11px;height:11px;"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line right"></span>
+        </div>
+        <p class="meta">Itinatag: Marso 20, 2026　／　Huling na-update: Mayo 12, 2026</p>
+      </header>
+
+      <section id="fil-s1">
+        <h2><span class="section-num">01</span>Pangkalahatang-ideya</h2>
+        <p>Ang Patakaran sa Privacy na ito ay naaangkop sa lahat ng bersyon ng Tarot Draw, kabilang ang iOS app, Android app, at Web app (tarot-draw.naru2.com).</p>
+        <div class="highlight-box gold">
+          <p class="label">Buod</p>
+          <p>Ang app na ito ay hindi nangongolekta ng personal na impormasyon tulad ng pangalan, email address, o lokasyon. Hindi kailangan ang pagpaparehistro.</p>
+        </div>
+      </section>
+
+      <section id="fil-s2">
+        <h2><span class="section-num">02</span>Nakolektang Data</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Uri ng Data</th><th>Koleksyon</th><th>Lokasyon ng Imbakan</th><th>Platform</th></tr></thead>
+            <tbody>
+              <tr><td>Personal na impormasyon (pangalan, email, atbp.)</td><td>Hindi kinokolekta</td><td>—</td><td>Lahat</td></tr>
+              <tr><td>Camera, mikropono</td><td>Hindi ginagamit</td><td>—</td><td>Lahat</td></tr>
+              <tr><td>GPS na lokasyon</td><td>Hindi ginagamit (ang lugar ng kapanganakan ay pinipili mula sa listahan sa app)</td><td>—</td><td>Lahat</td></tr>
+              <tr><td>Profile ng horoscope (petsa, oras, lugar ng kapanganakan)</td><td>Opsyonal na iniimbak</td><td>DataStore <span class="platform-badge badge-app">App</span> / IndexedDB <span class="platform-badge badge-web">Web</span></td><td>Lahat</td></tr>
+              <tr><td>Kasaysayan ng tarot reading</td><td>Lokal na iniimbak</td><td>IndexedDB (browser) / imbakan ng device</td><td>Lahat</td></tr>
+              <tr><td>Mga cookie at tracking pixel</td><td>Ginagamit</td><td>Browser</td><td><span class="platform-badge badge-web">Web</span></td></tr>
+              <tr><td>Mga ulat ng error at analytics (Firebase)</td><td>Awtomatikong kinokolekta</td><td>Mga server ng Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+              <tr><td>Advertising ID (AdMob)</td><td>Awtomatikong kinokolekta</td><td>Mga server ng Google</td><td><span class="platform-badge badge-app">App</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="fil-s3">
+        <h2><span class="section-num">03</span>Advertising at Mga Kasosyo</h2>
+        <p><strong style="color:var(--text)">Web app</strong>: Nagpapakita kami ng mga affiliate na ad sa pamamagitan ng A8.net. Gumagamit ng 1×1 na pixel para sukatin ang mga click.</p>
+        <p><strong style="color:var(--text)">Mga mobile app (iOS at Android)</strong>: Ang mga ad ay inhahatid ng Google AdMob gamit ang advertising identifier (IDFA / GAID).</p>
+      </section>
+
+      <section id="fil-s4">
+        <h2><span class="section-num">04</span>Pagpapanatili ng Data</h2>
+        <ul>
+          <li><strong style="color:var(--text)">IndexedDB (browser)</strong>: Ang kasaysayan ng reading ay lokal na iniimbak. Tinatanggal kapag binurahin ang data ng site. <span class="platform-badge badge-web">Web</span></li>
+          <li><strong style="color:var(--text)">DataStore Preferences (device)</strong>: Horoscope profile. Maaaring tanggalin gamit ang "Burahin ang profile" o sa pag-uninstall ng app. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Mga server ng Google</strong>: Firebase at AdMob. <span class="platform-badge badge-app">App</span></li>
+          <li><strong style="color:var(--text)">Mga server ng Cloudflare</strong>: Pansamantalang access log sa pamamagitan ng CDN. <span class="platform-badge badge-web">Web</span></li>
+        </ul>
+      </section>
+
+      <section id="fil-s5">
+        <h2><span class="section-num">05</span>Disclaimer</h2>
+        <div class="highlight-box">
+          <p class="label">Mahalaga</p>
+          <p>Ang mga tarot card reading ay para sa libangan at personal na pagninilay lamang. Huwag gamitin ang mga ito bilang batayan para sa mga medikal, legal, pinansyal, o iba pang mahahalagang desisyon sa buhay.</p>
+        </div>
+      </section>
+
+      <section id="fil-s6">
+        <h2><span class="section-num">06</span>Pakikipag-ugnayan at Pagtanggal ng Data</h2>
+        <p>Para humiling ng pagtanggal ng data o para sa mga pangkalahatang katanungan, gamitin ang form sa ibaba.</p>
+        <div class="highlight-box gold" style="margin-top:16px;">
+          <p class="label">Form ng Pakikipag-ugnayan / Kahilingan ng Pagtanggal ng Data</p>
+          <p style="margin-top:8px;">
+            <a href="https://forms.gle/R3msYE5Qu7Uuida38" target="_blank" rel="noopener noreferrer"
+               style="color:var(--gold);text-decoration:underline;word-break:break-all;">
+              https://forms.gle/R3msYE5Qu7Uuida38
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p class="footer-app">Tarot Draw</p>
+        <p>© 2026 Tarot Draw Developer. All rights reserved.</p>
+        <p>Ang bersyong Hapon ng patakarang ito ang awtoratibong teksto.</p>
+      </footer>
+    </div>
+
   </div>
 
   <script>
@@ -1693,7 +1960,7 @@
     }
 
     function langLabel(lang) {
-      return { ja: '日本語', en: 'English', 'zh-CN': '简体中文', 'zh-TW': '繁體中文', ko: '한국어', pt: 'Português', es: 'Español', fr: 'Français', de: 'Deutsch', it: 'Italiano', ro: 'Română', th: 'ภาษาไทย' }[lang] || '日本語';
+      return { ja: '日本語', en: 'English', 'zh-CN': '简体中文', 'zh-TW': '繁體中文', ko: '한국어', pt: 'Português', es: 'Español', fr: 'Français', de: 'Deutsch', it: 'Italiano', ro: 'Română', th: 'ภาษาไทย', hi: 'हिन्दी', pl: 'Polski', fil: 'Filipino' }[lang] || '日本語';
     }
 
     function detectLang() {
@@ -1727,6 +1994,9 @@
       if (nav.startsWith('ro')) return 'ro';
       if (nav.startsWith('th')) return 'th';
       if (nav.startsWith('en')) return 'en';
+      if (nav.startsWith('hi')) return 'hi';
+      if (nav.startsWith('pl')) return 'pl';
+      if (nav.startsWith('fil') || nav.startsWith('tl')) return 'fil';
       return 'ja';
     }
 
